@@ -214,113 +214,61 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 PRODUCT_PACKAGE_OVERLAYS += vendor/sm/overlay/common
 
-PRODUCT_VERSION_MAJOR = 12
-PRODUCT_VERSION_MINOR = 0
-PRODUCT_VERSION_MAINTENANCE = 0-RC0
+PRODUCT_VERSION_MAJOR = 50
+PRODUCT_VERSION_MINOR = 2
+PRODUCT_VERSION_MAINTENANCE = 0
 
-# Set SM_BUILDTYPE from the env RELEASE_TYPE, for jenkins compat
+# Set SM_BUILDTYPE and Odex support
+ifneq ($(filter mokee buildbot-0x,$(shell python -c 'import os;print os.uname()[1][:11]')),)
 
-ifndef SM_BUILDTYPE
-    ifdef RELEASE_TYPE
-        # Starting with "SM_" is optional
-        RELEASE_TYPE := $(shell echo $(RELEASE_TYPE) | sed -e 's|^SM_||g')
-        SM_BUILDTYPE := $(RELEASE_TYPE)
+    ifdef SM_NIGHTLY
+        SM_BUILDTYPE := NIGHTLY
     endif
-endif
-
-# Filter out random types, so it'll reset to UNOFFICIAL
-ifeq ($(filter RELEASE NIGHTLY SNAPSHOT EXPERIMENTAL,$(SM_BUILDTYPE)),)
-    SM_BUILDTYPE :=
+    ifdef SM_EXPERIMENTAL
+        SM_BUILDTYPE := EXPERIMENTAL
+    endif
+    ifdef SM_RELEASE
+        SM_BUILDTYPE := RELEASE
+        WITH_DEXPREOPT := true
+    endif
+    ifdef SM_HISTORY
+        SM_BUILDTYPE := HISTORY
+        WITH_DEXPREOPT := true
+    endif
 endif
 
 ifdef SM_BUILDTYPE
-    ifneq ($(SM_BUILDTYPE), SNAPSHOT)
-        ifdef SM_EXTRAVERSION
-            # Force build type to EXPERIMENTAL
-            SM_BUILDTYPE := EXPERIMENTAL
-            # Remove leading dash from SM_EXTRAVERSION
-            SM_EXTRAVERSION := $(shell echo $(SM_EXTRAVERSION) | sed 's/-//')
-            # Add leading dash to SM_EXTRAVERSION
-            SM_EXTRAVERSION := -$(SM_EXTRAVERSION)
-        endif
-    else
-        ifndef SM_EXTRAVERSION
-            # Force build type to EXPERIMENTAL, SNAPSHOT mandates a tag
-            SM_BUILDTYPE := EXPERIMENTAL
-        else
-            # Remove leading dash from SM_EXTRAVERSION
-            SM_EXTRAVERSION := $(shell echo $(SM_EXTRAVERSION) | sed 's/-//')
-            # Add leading dash to SM_EXTRAVERSION
-            SM_EXTRAVERSION := -$(SM_EXTRAVERSION)
-        endif
+    ifdef SM_EXTRAVERSION
+        # Force build type to EXPERIMENTAL
+        SM_BUILDTYPE := EXPERIMENTAL
+        # Remove leading dash from SM_EXTRAVERSION
+        SM_EXTRAVERSION := $(shell echo $(SM_EXTRAVERSION) | sed 's/-//')
+        # Add leading dash to SM_EXTRAVERSION
+        SM_EXTRAVERSION := -$(SM_EXTRAVERSION)
     endif
 else
     # If SM_BUILDTYPE is not defined, set to UNOFFICIAL
-    SM_BUILDTYPE := UNOFFICIAL
+    SM_BUILDTYPE := OFFICIAL
     SM_EXTRAVERSION :=
 endif
 
-ifeq ($(SM_BUILDTYPE), UNOFFICIAL)
-    ifneq ($(TARGET_UNOFFICIAL_BUILD_ID),)
-        SM_EXTRAVERSION := -$(TARGET_UNOFFICIAL_BUILD_ID)
-    endif
-endif
-
-ifeq ($(SM_BUILDTYPE), RELEASE)
-    ifndef TARGET_VENDOR_RELEASE_BUILD_ID
-        SM_VERSION := $(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR).$(PRODUCT_VERSION_MAINTENANCE)$(PRODUCT_VERSION_DEVICE_SPECIFIC)-$(SM_BUILD)
+ifneq ($(filter RELEASE HISTORY,$(SM_BUILDTYPE)),)
+    ifdef SM_BUILD_DATE
+        SM_VERSION := SM$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(SM_BUILD)-$(SM_BUILD_DATE)-$(SM_BUILDTYPE)
     else
-        ifeq ($(TARGET_BUILD_VARIANT),user)
-            SM_VERSION := $(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(TARGET_VENDOR_RELEASE_BUILD_ID)-$(SM_BUILD)
-        else
-            SM_VERSION := $(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR).$(PRODUCT_VERSION_MAINTENANCE)$(PRODUCT_VERSION_DEVICE_SPECIFIC)-$(SM_BUILD)
-        endif
+        SM_VERSION := SM$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(SM_BUILD)-$(shell date +%y%m%d)-$(SM_BUILDTYPE)
     endif
 else
-    ifeq ($(PRODUCT_VERSION_MINOR),0)
-        SM_VERSION := $(PRODUCT_VERSION_MAJOR)-$(shell date -u +%Y%m%d)-$(SM_BUILDTYPE)$(SM_EXTRAVERSION)-$(SM_BUILD)
-    else
-        SM_VERSION := $(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(shell date -u +%Y%m%d)-$(SM_BUILDTYPE)$(SM_EXTRAVERSION)-$(SM_BUILD)
-    endif
+    SM_VERSION := SM$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(SM_BUILD)-$(shell date +%Y%m%d%H%M)-$(SM_BUILDTYPE)
 endif
 
 PRODUCT_PROPERTY_OVERRIDES += \
   ro.sm.version=$(SM_VERSION) \
   ro.sm.releasetype=$(SM_BUILDTYPE) \
-  ro.modversion=$(SM_VERSION) \
-  ro.cmlegal.url=https://www.cyanogenmod.org/docs/privacy
+  ro.modversion=$(SM_VERSION)
 
 -include vendor/sm-priv/keys/keys.mk
 
-SM_DISPLAY_VERSION := $(SM_VERSION)
-
-ifneq ($(PRODUCT_DEFAULT_DEV_CERTIFICATE),)
-ifneq ($(PRODUCT_DEFAULT_DEV_CERTIFICATE),build/target/product/security/testkey)
-  ifneq ($(SM_BUILDTYPE), UNOFFICIAL)
-    ifndef TARGET_VENDOR_RELEASE_BUILD_ID
-      ifneq ($(SM_EXTRAVERSION),)
-        # Remove leading dash from SM_EXTRAVERSION
-        SM_EXTRAVERSION := $(shell echo $(SM_EXTRAVERSION) | sed 's/-//')
-        TARGET_VENDOR_RELEASE_BUILD_ID := $(SM_EXTRAVERSION)
-      else
-        TARGET_VENDOR_RELEASE_BUILD_ID := $(shell date -u +%Y%m%d)
-      endif
-    else
-      TARGET_VENDOR_RELEASE_BUILD_ID := $(TARGET_VENDOR_RELEASE_BUILD_ID)
-    endif
-    SM_DISPLAY_VERSION=$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(TARGET_VENDOR_RELEASE_BUILD_ID)
-  endif
-endif
-endif
-
-# by default, do not update the recovery with system updates
-PRODUCT_PROPERTY_OVERRIDES += persist.sys.recovery_update=false
-
-PRODUCT_PROPERTY_OVERRIDES += \
-  ro.sm.display.version=$(SM_DISPLAY_VERSION)
-
--include $(WORKSPACE)/build_env/image-auto-bits.mk
-
--include vendor/cyngn/product.mk
+-include $(WORKSPACE)/build-env/image-auto-bits.mk
 
 $(call prepend-product-if-exists, vendor/extra/product.mk)
