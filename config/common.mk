@@ -104,6 +104,13 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/sm/prebuilt/common/etc/init.local.rc:root/init.sm.rc
 
+# Google IME
+ifneq ($(TARGET_EXCLUDE_GOOGLE_IME),true)
+PRODUCT_COPY_FILES += \
+    vendor/mk/prebuilt/common/app/GoogleIME/GoogleIME.apk:system/app/GoogleIME/GoogleIME.apk \
+    vendor/mk/prebuilt/common/app/GoogleIME/lib/arm/libjni_unbundled_latinimegoogle.so:system/app/GoogleIME/lib/arm/libjni_unbundled_latinimegoogle.so
+endif
+
 # Bring in camera effects
 PRODUCT_COPY_FILES +=  \
     vendor/sm/prebuilt/common/media/LMprec_508.emd:system/media/LMprec_508.emd \
