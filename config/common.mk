@@ -127,7 +127,6 @@ include vendor/sm/config/themes_common.mk
 # Required SM packages
 PRODUCT_PACKAGES += \
     Development \
-    LatinIME \
     BluetoothExt
 
 # Optional SM packages
