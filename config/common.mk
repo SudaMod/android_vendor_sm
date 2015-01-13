@@ -107,8 +107,8 @@ PRODUCT_COPY_FILES += \
 # Google IME
 ifneq ($(TARGET_EXCLUDE_GOOGLE_IME),true)
 PRODUCT_COPY_FILES += \
-    vendor/mk/prebuilt/common/app/GoogleIME/GoogleIME.apk:system/app/GoogleIME/GoogleIME.apk \
-    vendor/mk/prebuilt/common/app/GoogleIME/lib/arm/libjni_unbundled_latinimegoogle.so:system/app/GoogleIME/lib/arm/libjni_unbundled_latinimegoogle.so
+    vendor/sm/prebuilt/common/app/GoogleIME/GoogleIME.apk:system/app/GoogleIME/GoogleIME.apk \
+    vendor/sm/prebuilt/common/app/GoogleIME/lib/arm/libjni_unbundled_latinimegoogle.so:system/app/GoogleIME/lib/arm/libjni_unbundled_latinimegoogle.so
 endif
 
 # Bring in camera effects
@@ -126,7 +126,9 @@ PRODUCT_COPY_FILES += \
 
 # This is SM!
 PRODUCT_COPY_FILES += \
-    vendor/sm/config/permissions/com.cyanogenmod.android.xml:system/etc/permissions/com.cyanogenmod.android.xml
+    vendor/sm/config/permissions/com.cyanogenmod.android.xml:system/etc/permissions/com.cyanogenmod.android.xml \
+    vendor/sm/config/permissions/com.mokee.android.xml:system/etc/permissions/com.mokee.android.xml
+
 
 # T-Mobile theme engine
 include vendor/sm/config/themes_common.mk
@@ -153,7 +155,8 @@ PRODUCT_PACKAGES += \
     Eleven \
     LockClock \
     CMAccount \
-    CMHome
+    CMHome \
+    mokee-phonelocation
 
 # SM Hardware Abstraction Framework
 PRODUCT_PACKAGES += \
