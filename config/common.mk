@@ -83,7 +83,7 @@ ifneq ($(WITH_GMS),true)
 PRODUCT_COPY_FILES += \
     vendor/sm/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
     vendor/sm/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
-    vendor/sm/prebuilt/common/bin/50-cm.sh:system/addon.d/50-cm.sh \
+    vendor/sm/prebuilt/common/bin/50-sm.sh:system/addon.d/50-sm.sh \
     vendor/sm/prebuilt/common/bin/blacklist:system/addon.d/blacklist
 endif
 
