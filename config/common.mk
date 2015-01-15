@@ -104,6 +104,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/sm/prebuilt/common/etc/init.local.rc:root/init.sm.rc
 
+
 # Google IME
 ifneq ($(TARGET_EXCLUDE_GOOGLE_IME),true)
 PRODUCT_COPY_FILES += \
@@ -144,6 +145,10 @@ PRODUCT_PACKAGES += \
     Basic \
     libemoji \
     Terminal
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.radio.ipcall.enabled=true
+
 
 # Custom SM packages
 PRODUCT_PACKAGES += \
@@ -212,14 +217,25 @@ PRODUCT_PACKAGES += \
 
 # These packages are excluded from user builds
 ifneq ($(TARGET_BUILD_VARIANT),user)
+
 PRODUCT_PACKAGES += \
     procmem \
     procrank \
     su
-endif
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.sys.root_access=1
+else
 
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.root_access=0
+
+endif
+
+# Chromium Prebuilt
+ifeq ($(PRODUCT_PREBUILT_WEBVIEWCHROMIUM),yes)
+-include prebuilts/chromium/$(SM_BUILD)/chromium_prebuilt.mk
+endif
 
 PRODUCT_PACKAGE_OVERLAYS += vendor/sm/overlay/common
 

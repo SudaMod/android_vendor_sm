@@ -1,9 +1,6 @@
 # Inherit common SM stuff
 $(call inherit-product, vendor/sm/config/common.mk)
 
-# Bring in all video files
-$(call inherit-product, frameworks/base/data/videos/VideoPackage2.mk)
-
 # Include SM audio files
 include vendor/sm/config/sm_audio.mk
 
