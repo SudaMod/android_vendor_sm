@@ -157,15 +157,14 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Custom SM packages
 PRODUCT_PACKAGES += \
-    Launcher3 \
-    Trebuchet \
     AudioFX \
     CMWallpapers \
     CMFileManager \
     Eleven \
     LockClock \
     CMAccount \
-    CMHome \
+    OmniSwitch \
+	SudaLauncher \
 
 # SM Hardware Abstraction Framework
 PRODUCT_PACKAGES += \
