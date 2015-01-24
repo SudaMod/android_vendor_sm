@@ -164,7 +164,8 @@ PRODUCT_PACKAGES += \
     LockClock \
     CMAccount \
     OmniSwitch \
-	SudaLauncher \
+    SudaLauncher \
+    CyanogenSetupWizard
 
 # SM Hardware Abstraction Framework
 PRODUCT_PACKAGES += \
