@@ -3,8 +3,6 @@
 LOG_FILE=/data/Tweak.log
 LOG_FILE_SQL=/data/Tweak_sqlite.log
 LogcatOF= "false";
-ZipalignOF= "true";
-ZIPALIGNDB=/data/Tweak_zipalign.db;
 RUN_EVERY=604800;
 CURRDATE=`date +%s`
 
@@ -12,47 +10,6 @@ echo "" | tee -a $LOG_FILE
 echo "--> Start" | tee -a $LOG_FILE
 echo "" | tee -a $LOG_FILE
 
-
-
-#zipalign对齐
-if [ $ZipalignOF = "true" ]; then
-
-if [ ! -f $ZIPALIGNDB ]; then
-    APKDIR=/system/app;
-	touch $ZIPALIGNDB;
-fi;
-
-echo "--> 全自动Zipalign开始" | tee -a $LOG_FILE
-
-for DIR in $APKDIR ; do
-  cd $DIR
-  for APK in *.apk ; do
-    if [ $APK -ot $ZIPALIGNDB ] && [ $(grep "$DIR/$APK" $ZIPALIGNDB|wc -l) -gt 0 ] ; then
-      echo "-此APK已经对齐过: $DIR/$APK" | tee -a $LOG_FILE
-    else
-      zipalign -c 4 $APK
-      if [ $? -eq 0 ] ; then
-        echo "-此APK已经对齐过: $DIR/$APK" | tee -a $LOG_FILE
-        grep "$DIR/$APK" $ZIPALIGNDB > /dev/null || echo $DIR/$APK >> $ZIPALIGNDB
-      else
-        echo "-开始处理: $DIR/$APK" | tee -a $LOG_FILE
-        zipalign -f 4 $APK /cache/$APK
-        busybox mount -o rw,remount /system
-        cp -f -p /cache/$APK $APK
-        busybox rm -f /cache/$APK
-        grep "$DIR/$APK" $ZIPALIGNDB > /dev/null || echo $DIR/$APK >> $ZIPALIGNDB
-      fi
-    fi
-  done
-done
-busybox mount -o ro,remount /system
-touch $ZIPALIGNDB
-echo "--> 全自动Zipalign结束"| tee -a $LOG_FILE
-
-else
-echo "--> 全自动Zipalign关"| tee -a $LOG_FILE
-
-fi
 
 if [ -e $LOG_FILE_SQL ]; then
     LASTRUN=`stat -t $LOG_FILE_SQL | awk '{print $14}'`
