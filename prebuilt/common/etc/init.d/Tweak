@@ -3,7 +3,7 @@
 LOG_FILE=/data/Tweak.log
 LOG_FILE_SQL=/data/Tweak_sqlite.log
 LogcatOF=false
-RUN_EVERY=604800;
+RUN_EVERY=604800
 CURRDATE=`date +%s`
 
 echo "" | tee -a $LOG_FILE
