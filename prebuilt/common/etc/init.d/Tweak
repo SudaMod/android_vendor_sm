@@ -2,13 +2,12 @@
 
 LOG_FILE=/data/Tweak.log
 LOG_FILE_SQL=/data/Tweak_sqlite.log
-LogcatOF= "false";
+LogcatOF=false
 RUN_EVERY=604800;
 CURRDATE=`date +%s`
 
 echo "" | tee -a $LOG_FILE
 echo "--> Start" | tee -a $LOG_FILE
-echo "" | tee -a $LOG_FILE
 
 
 if [ -e $LOG_FILE_SQL ]; then
@@ -43,6 +42,7 @@ then
 fi;
 
 #清理垃圾、阻止垃圾生成
+echo "--> 禁止Log与LogCat生成"| tee -a $LOG_FILE
 if [ "$LogcatOF" = "false" ]; then
 rm /dev/log/main;
 rm -r /data/local/tmp/*
