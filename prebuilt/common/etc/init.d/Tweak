@@ -53,7 +53,6 @@ rm -r /data/system/dropbox/*
 rm -r /data/tombstones/*
 rm -r /data/anr/*
 busybox chmod 000 /data/system/userbehavior.db;
-busybox chmod 000 /data/system/usagestats/;
 busybox chmod 000 /data/system/dropbox/;
 busybox chmod 000 /data/anr/;
 busybox chmod 000 /data/tombstones/;
@@ -62,7 +61,6 @@ busybox chmod 000 /data/system/appusagestats/;
 else
 echo "--> 允许Log与LogCat生成"| tee -a $LOG_FILE
 busybox chmod 777 /data/system/userbehavior.db;
-busybox chmod 777 /data/system/usagestats/;
 busybox chmod 777 /data/system/dropbox/;
 busybox chmod 777 /data/anr/;
 busybox chmod 777 /data/tombstones/;
