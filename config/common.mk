@@ -100,10 +100,14 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/sm/prebuilt/common/etc/init.d/90userinit:system/etc/init.d/90userinit
 
+#Tweak
+PRODUCT_COPY_FILES += \
+    vendor/sm/prebuilt/common/etc/init.d/Tweak:system/etc/init.d/Tweak
+
+
 # SM-specific init file
 PRODUCT_COPY_FILES += \
     vendor/sm/prebuilt/common/etc/init.local.rc:root/init.sm.rc
-
 
 # Google IME
 ifneq ($(TARGET_EXCLUDE_GOOGLE_IME),true)
