@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="pref_storage">存储选项</string>
+    <string name="pref_secure_storage_category">存储安全</string>
+    <string name="pref_secure_storage_reset_password_title">重置密码</string>
+    <string name="pref_secure_storage_delete_storage_title">删除存储</string>
+    <string name="pref_secure_storage_delayed_sync_title">同步延迟</string>
+    <string name="pref_secure_storage_delayed_sync_summary">操作文件安全同步系统代价很大，启用该选项后每次操作将得到更快的响应，执行同步时，文件系统将处于闲置状态，但当应用停止运行时，数据将不会同步保存。</string>
+    <string name="pref_secure_storage_delete_storage_title">删除存储设备</string>  
+</resources>

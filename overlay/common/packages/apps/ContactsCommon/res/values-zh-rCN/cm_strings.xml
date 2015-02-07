@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2014-2015 The CyanogenMod Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Virtual local storage account name -->
+    <string name="local_storage_account" product="tablet">平板帐户</string>
+    <string name="local_storage_account" product="default">本地电话账户</string>
+
+    <!-- CMCC -->
+    <string name="import_contacts_sim">从SIM卡导入联系人?</string>
+
+    <!-- CAF -->
+    <!-- Action string for managing SIM contacts -->
+    <string name="manage_sim_contacts">管理SIM卡联系人</string>
+
+    <!-- Action that exports all contacts to SIM -->
+    <string name="export_to_sim">导出到SIM卡</string>
+
+    <!--The failed reason shown when importing a vCard file -->
+    <string name="fail_reason_import_vcard">\'<xliff:g id="name">%s</xliff:g>\' 不能导入由于I/O错误</string>
+
+    <!-- Toast indicating that sharing too many contact has failed. [CHAR LIMIT=NONE]  -->
+    <string name="contact_share_failed_toast">不超过<xliff:g id="count">%d</xliff:g>个联系人能被共享</string>
+ 
+    <string name="label_groups">群组</string>
+    <string name="exporting">导出\u2026</string>
+
+    <!-- Message while reading multiple vCard files "(current number) of (total number) files"
+          The order of "current number" and "total number" cannot be changed -->
+    <string name="reading_vcard_files"><xliff:g id="current_number">%1$s</xliff:g> / <xliff:g id="total_number">%2$s</xliff:g> 文件</string>
+
+    <string name="export_failed">导出失败</string>
+    <string name="sim_card_full">SIM卡已满</string>
+    <string name="export_finished">导出完成</string>
+    <string name="tag_too_long">联系人姓名太长</string>
+    <string name="sim_contacts_not_loaded">不能加载SIM联系人</string>
+
+    <plurals name="export_cancelled">
+        <item quantity="one">取消导出，%d 已导出</item>
+        <item quantity="other">取消导出，%d 已导出</item>
+    </plurals>
+
+    <string name="export_no_phone_or_email"><xliff:g id="name">%s</xliff:g> 没有电话号码或者Email地址</string>
+
+    <string name="import_from_sim_select">选择SIM卡导入</string>
+
+    <!-- Dialog title shown when (USB) storage does not exist [CHAR LIMIT=25] -->
+    <string name="no_sdcard_title" product="nosdcard">无法储存</string>
+    <!-- Dialog title shown when SD Card does not exist -->
+    <string name="no_sdcard_title" product="default">没有SD卡</string>
+
+    <!-- Confirmation dialog title after users selects to delete a contact. [CHAR LIMIT=25]-->
+    <string name="deleteConfirmation_title">删除联系人?</string>
+
+    <!-- Confirmation dialog contents after users selects to delete a Writable contact. -->
+    <string name="deleteConfirmation">这个联系人将被删除。</string>
+
+    <string name="copy_done">联系人复制成功</string>
+    <string name="copy_failure">联系人复制失败</string>
+    <string name="card_no_space">SIM卡已满，复制失败</string>
+ 
+    <!-- Detailed description of the preference section that allows users to configure how they
+         want their contacts to be displayed. [CHAR LIMIT=128] -->
+    <string name="settings_contact_display_options_description">配置您的联系人显示和排序方式。</string>
+
+    <!-- Menu item used to initiate ip call -->
+    <string name="ip_call_by_slot">IP电话通过<xliff:g id="subName">%s</xliff:g></string>
+    <string name="no_ip_number">没有IP号码</string>
+    <string name="no_ip_number_on_sim_card">没有IP号码或SIM卡</string>
+    <string name="set_ip_number">设置IP号码</string>
+    <string name="ipcall_dialog_title">IP电话设置</string>
+    <string name="ipcall_dialog_edit_hint">请输入IP前缀</string>
+
+    <string name="import_contacts_from_all_cards">从SIM卡导入联系人</string>
+    <string name="select_path">选择路径</string>
+    <string name="select_sim">选择SIM卡</string>
+
+</resources>

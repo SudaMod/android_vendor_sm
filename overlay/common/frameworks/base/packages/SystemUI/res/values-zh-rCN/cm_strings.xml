@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2015 The CyanogenMod Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- The text for the button in the notification window-shade that clears
+         all of the currently visible notifications. [CHAR LIMIT=10]-->
+    <string name="clear_recents">关闭所有最近任务</string>
+
+    <!-- Screenshot delete -->
+    <string name="screenshot_delete_action">删除</string>
+    <string name="screenshot_delete_confirmation">屏幕截图已删除。</string>
+
+    <!-- Development shortcuts -->
+    <string name="advanced_dev_option_wipe_app">擦除应用数据</string>
+    <string name="advanced_dev_option_force_stop">强行停止</string>
+    <string name="advanced_dev_option_uninstall">卸载</string>
+
+    <!-- Content description of the mobile data tile in quick settings when off (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_data_off">关闭移动数据。</string>
+    <!-- Content description of the mobile data tile in quick settings when on (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_data_on">开启移动数据。</string>
+    <!-- Content description of the roaming tile in quick settings when off (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_roaming_off">关闭漫游。</string>
+    <!-- Content description of the roaming tile in quick settings when on (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_roaming_on">开启漫游。</string>
+
+    <!-- Content description of the location tile in quick settings when on, battery saving mode (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_location_battery_saving">定位模式报告：耗电量低。</string>
+    <!-- Content description of the location tile in quick settings when on, sensors only mode (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_location_gps_only">定位模式报告：仅限设备。</string>
+    <!-- Content description of the location tile in quick settings when on, high accuracy mode (not shown on the screen). [CHAR LIMIT=NONE] -->
+    <string name="accessibility_quick_settings_location_high_accuracy">定位模式报告：准确度高。</string>
+
+    <string name="accessibility_dpad_left">光标左移</string>
+    <string name="accessibility_dpad_right">光标右移</string>
+
+    <!-- QuickSettings: Mobile data [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_mobile_data_label">移动数据</string>
+    <!-- QuickSettings: Roaming [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_roaming_label">漫游</string>
+
+    <!-- QuickSettings: Apn switch button label [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_apn_switch_label">APN开关</string>
+
+    <!-- QuickSettings: Dds [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_dds_sub">卡<xliff:g id="number">%d</xliff:g>数据</string>
+    <string name="quick_settings_data_off">数据关闭</string>
+
+    <!-- QuickSettings: Location detail panel title [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_location_detail_title">位置信息</string>
+    <!-- QuickSettings: Location (On, low-power) [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_location_battery_saving_label">耗电量低</string>
+    <!-- QuickSettings: Location (On, gps-only) [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_location_gps_only_label">仅限设备</string>
+    <!-- QuickSettings: Location (On, high-accuracy) [CHAR LIMIT=NONE] -->
+    <string name="quick_settings_location_high_accuracy_label">准确度高</string>
+
+    <string name="quick_settings_nfc_label">NFC</string>
+    <string name="quick_settings_profiles_detail_title">情景模式</string>
+    <string name="quick_settings_profiles_disabled">情景模式已禁用</string>
+    <string name="quick_settings_compass_label">指南针</string>
+    <string name="quick_settings_compass_value" translatable="false"><xliff:g id="degrees">%1$.0f</xliff:g>\u00b0 <xliff:g id="direction">%2$s</xliff:g></string>
+    <string name="quick_settings_compass_init">初始化\u2026</string>
+    <string name="quick_settings_lockscreen_label">锁屏</string>
+    <string name="quick_settings_network_adb_label">ADB网络调试</string>
+    <string name="quick_settings_lte_label">LTE</string>
+    <string name="quick_settings_visualizer_label" translatable="false">AudioFX</string>
+    <string name="quick_settings_screen_timeout_detail_title">屏幕超时</string>
+
+    <!-- Weather string format in expanded statusbar header -->
+    <string name="status_bar_expanded_header_weather_format"><xliff:g id="temp">%1$s</xliff:g> - <xliff:g id="condition">%2$s</xliff:g></string>
+
+    <string name="left_shortcut_hint">右边滑动%1$s</string>
+    <string name="right_shortcut_hint">左边滑动%1$s</string>
+
+    <!-- Dialog title for navigation bar button selection -->
+    <string name="navbar_dialog_title">选择要分配的动作</string>
+    <string name="navbar_home_button">Home 键</string>
+    <string name="navbar_recent_button">任务键</string>
+    <string name="navbar_search_button">搜索键</string>
+    <string name="navbar_back_button">返回键</string>
+    <string name="navbar_empty_button">留空</string>
+    <string name="navbar_menu_conditional_button">菜单键 (自动隐藏)</string>
+    <string name="navbar_menu_always_button">菜单键 (总是显示)</string>
+    <string name="navbar_menu_big_button">菜单键</string>
+
+    <!-- Navigation ring shortcuts -->
+    <string name="navigation_ring_title">快速启动的快捷方式</string>
+    <string name="navring_target_reset_message">删除用户自定义导航栏快捷方式，恢复默认?</string>
+    <string name="navring_target_reset">导航栏快捷方式恢复迷人</string>
+    <string name="navring_action_open_ime_switcher">打开输入法切换器</string>
+    <string name="navring_action_kill_app">关闭应用</string>
+    <string name="navring_action_none">无动作</string>
+    <string name="navring_action_take_screenshot">屏幕截图</string>
+    <string name="navring_action_ring_vibrate">铃声/振动</string>
+    <string name="navring_action_ring_silent">铃声/静音</string>
+    <string name="navring_action_ring_vibrate_silent">铃声/振动/静音</string>
+    <string name="navring_action_screen_off">关闭屏幕</string>
+    <string name="navring_action_torch">打开手电筒</string>
+    <string name="navring_action_google_now">Google Now</string>
+    <string name="navring_choose_action_title">选择动作</string>
+    <string name="select_application">选择应用</string>
+    <string name="lockscreen_target_empty">空</string>
+
+</resources>
