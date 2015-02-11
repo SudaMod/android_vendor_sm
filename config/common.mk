@@ -161,7 +161,8 @@ PRODUCT_PACKAGES += \
     CMAccount \
     OmniSwitch \
     SudaLauncher \
-    CyanogenSetupWizard
+    CyanogenSetupWizard \
+    DeviceControl
 
 # SM Hardware Abstraction Framework
 PRODUCT_PACKAGES += \
