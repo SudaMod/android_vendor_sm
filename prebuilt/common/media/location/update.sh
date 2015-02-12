@@ -16,7 +16,7 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 
+rm suda-phonelocation.dat
 make
-./generateData Mps -c kylin-phoneloc.txt
-mv kylin-phoneloc.dat ..
+./generateData Mps -c suda-phonelocation.txt
 make clean

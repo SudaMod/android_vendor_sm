@@ -126,10 +126,9 @@ PRODUCT_COPY_FILES += \
     vendor/sm/config/permissions/com.cyanogenmod.android.xml:system/etc/permissions/com.cyanogenmod.android.xml \
     vendor/sm/config/permissions/com.mokee.android.xml:system/etc/permissions/com.mokee.android.xml
 
-# Prebuilt phonelocation!
+# Phonelocation!
 PRODUCT_COPY_FILES +=  \
-    vendor/sm/prebuilt/common/lib/libkylin-phoneloc-jni.so:system/lib/libkylin-phoneloc-jni.so \
-    vendor/sm/prebuilt/common/media/kylin-phoneloc.dat:system/media/kylin-phoneloc.dat
+    vendor/sm/prebuilt/common/media/location/suda-phonelocation.dat:system/media/location/suda-phonelocation.dat
 
 
 # T-Mobile theme engine
