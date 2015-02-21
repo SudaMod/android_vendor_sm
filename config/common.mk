@@ -167,7 +167,8 @@ PRODUCT_PACKAGES += \
     OmniSwitch \
     SudaLauncher \
     CyanogenSetupWizard \
-    DeviceControl
+    DeviceControl \
+    SudaModUpdater 
 
 # SM Hardware Abstraction Framework
 PRODUCT_PACKAGES += \
