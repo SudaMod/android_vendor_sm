@@ -108,6 +108,11 @@ PRODUCT_COPY_FILES += \
     vendor/sm/prebuilt/common/app/GoogleIME/lib/arm/libjni_unbundled_latinimegoogle.so:system/app/GoogleIME/lib/arm/libjni_unbundled_latinimegoogle.so
 endif
 
+# SuperSU
+PRODUCT_COPY_FILES += \
+ vendor/sm/prebuilt/common/UPDATE-SuperSU.zip:system/addon.d/UPDATE-SuperSU.zip \
+ vendor/sm/prebuilt/common/etc/init.d/99SuperSUDaemon:system/etc/init.d/99SuperSUDaemon
+
 # Bring in camera effects
 PRODUCT_COPY_FILES +=  \
     vendor/sm/prebuilt/common/media/LMprec_508.emd:system/media/LMprec_508.emd \
