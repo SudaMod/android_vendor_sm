@@ -168,10 +168,7 @@ PRODUCT_PACKAGES += \
     CMFileManager \
     Eleven \
     LockClock \
-    CMAccount \
-    OmniSwitch \
     SudaLauncher \
-    CyanogenSetupWizard \
     DeviceControl \
     SudaModUpdater 
 
