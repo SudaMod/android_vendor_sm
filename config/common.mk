@@ -110,7 +110,7 @@ endif
 
 # SuperSU
 PRODUCT_COPY_FILES += \
- vendor/sm/prebuilt/common/UPDATE-SuperSU.zip:system/addon.d/UPDATE-SuperSU.zip \
+ vendor/sm/prebuilt/common/supersu/UPDATE-SuperSU.zip:system/addon.d/UPDATE-SuperSU.zip \
  vendor/sm/prebuilt/common/etc/init.d/99SuperSUDaemon:system/etc/init.d/99SuperSUDaemon
 
 # Bring in camera effects
@@ -129,7 +129,6 @@ PRODUCT_COPY_FILES += \
 # This is SM!
 PRODUCT_COPY_FILES += \
     vendor/sm/config/permissions/com.cyanogenmod.android.xml:system/etc/permissions/com.cyanogenmod.android.xml \
-    vendor/sm/config/permissions/com.mokee.android.xml:system/etc/permissions/com.mokee.android.xml
 
 # Phonelocation!
 PRODUCT_COPY_FILES +=  \
