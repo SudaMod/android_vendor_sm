@@ -1,13 +1,13 @@
-# Inherit common CM stuff
-$(call inherit-product, vendor/cm/config/common.mk)
+# Inherit common SM stuff
+$(call inherit-product, vendor/sm/config/common.mk)
 
-# Include CM audio files
-include vendor/cm/config/cm_audio.mk
+# Include SM audio files
+include vendor/sm/config/sm_audio.mk
 
-# Include CM LatinIME dictionaries
-PRODUCT_PACKAGE_OVERLAYS += vendor/cm/overlay/dictionaries
+# Include SM LatinIME dictionaries
+PRODUCT_PACKAGE_OVERLAYS += vendor/sm/overlay/dictionaries
 
-# Optional CM packages
+# Optional SM packages
 PRODUCT_PACKAGES += \
     Galaxy4 \
     HoloSpiralWallpaper \
@@ -21,7 +21,7 @@ PRODUCT_PACKAGES += \
     SoundRecorder \
     PhotoPhase
 
-# Extra tools in CM
+# Extra tools in SM
 PRODUCT_PACKAGES += \
     vim \
     zip \
