@@ -101,6 +101,19 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/sm/prebuilt/common/etc/init.local.rc:root/init.sm.rc
 
+# Google PinYin
+PRODUCT_COPY_FILES += $(shell test -d vendor/sm/prebuilt/google/app/GooglePinYin && \
+    find vendor/sm/prebuilt/google/app/GooglePinYin -name '*.apk' \
+    -printf '%p:system/app/GooglePinYin/%f ')
+PRODUCT_COPY_FILES += $(shell test -d vendor/sm/prebuilt/google/app/GooglePinYin && \
+    find vendor/sm/prebuilt/google/app/GooglePinYin -name '*.so' \
+    -printf '%p:system/app/GooglePinYin/lib/arm/%f ')
+
+# SuperSU
+PRODUCT_COPY_FILES += \
+ vendor/sm/prebuilt/common/supersu/UPDATE-SuperSU.zip:system/addon.d/UPDATE-SuperSU.zip \
+ vendor/sm/prebuilt/common/etc/init.d/99SuperSUDaemon:system/etc/init.d/99SuperSUDaemon
+
 # Bring in camera effects
 PRODUCT_COPY_FILES +=  \
     vendor/sm/prebuilt/common/media/LMprec_508.emd:system/media/LMprec_508.emd \
