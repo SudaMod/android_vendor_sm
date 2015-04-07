@@ -8,8 +8,3 @@ then
    setprop sm.userinit.active 1;
 fi;
 
-if [ -d /data/local/userinit.d ];
-then
-   busybox run-parts /data/local/userinit.d;
-   setprop sm.userinit.active 1;
-fi;
