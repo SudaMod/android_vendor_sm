@@ -145,7 +145,7 @@ include vendor/sm/config/themes_common.mk
 # Screen recorder
 PRODUCT_PACKAGES += \
     libscreenrecorder \
-    #ScreenRecorder
+    ScreenRecorder
 
 # Required SM packages
 PRODUCT_PACKAGES += \
