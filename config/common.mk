@@ -171,8 +171,8 @@ PRODUCT_PACKAGES += \
     Eleven \
     LockClock \
     SudaLauncher \
-    DeviceControl \
-    SudaModUpdater 
+    DeviceControl
+#SudaModUpdater 
 
 # SM Hardware Abstraction Framework
 PRODUCT_PACKAGES += \
