@@ -150,7 +150,8 @@ PRODUCT_PACKAGES += \
 # Required SM packages
 PRODUCT_PACKAGES += \
     Development \
-    BluetoothExt
+    BluetoothExt \
+    Profiles
 
 # Optional SM packages
 PRODUCT_PACKAGES += \
