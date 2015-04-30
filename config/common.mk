@@ -174,9 +174,7 @@ PRODUCT_PACKAGES += \
     CMFileManager \
     Eleven \
     LockClock \
-    SudaLauncher \
-    DeviceControl \
-    SudaModUpdater 
+    SudaLauncher
 
 # SM Hardware Abstraction Framework
 PRODUCT_PACKAGES += \
