@@ -4,9 +4,6 @@ $(call inherit-product, vendor/sm/config/common.mk)
 # Include SM audio files
 include vendor/sm/config/sm_audio.mk
 
-# Include SM LatinIME dictionaries
-PRODUCT_PACKAGE_OVERLAYS += vendor/sm/overlay/dictionaries
-
 # Optional SM packages
 PRODUCT_PACKAGES += \
     Galaxy4 \

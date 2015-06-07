@@ -4,6 +4,10 @@ $(call inherit-product, vendor/sm/config/common.mk)
 # Include SM audio files
 include vendor/sm/config/sm_audio.mk
 
+# Required CM packages
+PRODUCT_PACKAGES += \
+    LatinIME
+
 # Default notification/alarm sounds
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.config.notification_sound=Argon.ogg \
