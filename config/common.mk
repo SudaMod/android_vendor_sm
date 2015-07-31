@@ -175,7 +175,8 @@ PRODUCT_PACKAGES += \
     CMFileManager \
     Eleven \
     LockClock \
-    SudaLauncher
+    SudaLauncher \
+    PhoneLocationProvider
 #SudaModUpdater 
 
 # CM Platform Library
