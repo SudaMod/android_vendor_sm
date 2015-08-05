@@ -120,6 +120,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
  vendor/sm/prebuilt/common/xposed/UPDATE-XPOSED.zip:xposed/UPDATE-XPOSED.zip \
 
+# MarkApi
+PRODUCT_COPY_FILES += \
+ vendor/sm/prebuilt/common/lib/libmarkapi.so:system/lib/libmarkapi.so
+
 # Bring in camera effects
 PRODUCT_COPY_FILES +=  \
     vendor/sm/prebuilt/common/media/LMprec_508.emd:system/media/LMprec_508.emd \
