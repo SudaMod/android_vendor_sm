@@ -116,10 +116,6 @@ PRODUCT_COPY_FILES += \
  vendor/sm/prebuilt/common/supersu/UPDATE-SuperSU.zip:supersu/UPDATE-SuperSU.zip \
  vendor/sm/prebuilt/common/etc/init.d/99SuperSUDaemon:system/etc/init.d/99SuperSUDaemon
 
-# Xposed
-PRODUCT_COPY_FILES += \
- vendor/sm/prebuilt/common/xposed/UPDATE-XPOSED.zip:xposed/UPDATE-XPOSED.zip \
-
 # MarkApi
 PRODUCT_COPY_FILES += \
  vendor/sm/prebuilt/common/lib/libmarkapi.so:system/lib/libmarkapi.so
