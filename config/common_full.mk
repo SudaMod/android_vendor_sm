@@ -6,14 +6,8 @@ include vendor/sm/config/sm_audio.mk
 
 # Optional SM packages
 PRODUCT_PACKAGES += \
-    Galaxy4 \
-    HoloSpiralWallpaper \
     LiveWallpapers \
     LiveWallpapersPicker \
-    MagicSmokeWallpapers \
-    NoiseField \
-    PhaseBeam \
-    VisualizationWallpapers \
     PhotoTable \
     SoundRecorder \
     PhotoPhase
