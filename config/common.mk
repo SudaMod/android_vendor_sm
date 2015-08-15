@@ -321,12 +321,23 @@ ifndef CM_PLATFORM_SDK_VERSION
   CM_PLATFORM_SDK_VERSION := 2
 endif
 
+ifndef CM_PLATFORM_REV
+  # For internal SDK revisions that are hotfixed/patched
+  # Reset after each CM_PLATFORM_SDK_VERSION release
+  # If you are doing a release and this is NOT 0, you are almost certainly doing it wrong
+  CM_PLATFORM_REV := 0
+endif
+
 PRODUCT_PROPERTY_OVERRIDES += \
   ro.sm.version=$(SM_VERSION) \
   ro.sm.releasetype=$(SM_BUILDTYPE) \
   ro.modversion=$(SM_VERSION)
 
 -include vendor/sm-priv/keys/keys.mk
+
+# CyanogenMod Platform Internal
+PRODUCT_PROPERTY_OVERRIDES += \
+  ro.cm.build.version.plat.rev=$(CM_PLATFORM_REV)
 
 -include $(WORKSPACE)/build_env/image-auto-bits.mk
 
