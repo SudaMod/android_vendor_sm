@@ -10,7 +10,8 @@ PRODUCT_PACKAGES += \
     LiveWallpapersPicker \
     PhotoTable \
     SoundRecorder \
-    PhotoPhase
+    PhotoPhase \
+    CMSettingsProvider
 
 # Extra tools in SM
 PRODUCT_PACKAGES += \
