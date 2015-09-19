@@ -90,7 +90,9 @@ brunch device name here
 
 or make is all one line.
 
-. build/envsetup.sh && breakfast device name here && brunch device name here
+. build/envsetup.sh 
+breakfast device name here
+brunch device name here
 
 For more information on this Github Organization and how it is structured, please read the wiki article
 
