@@ -267,26 +267,6 @@ PRODUCT_PACKAGE_OVERLAYS += vendor/sm/overlay/common
 
 PRODUCT_VERSION_MAJOR = 51
 PRODUCT_VERSION_MINOR = 1
-PRODUCT_VERSION_MAINTENANCE = 0
-
-# Set SM_BUILDTYPE and Odex support
-ifneq ($(filter mokee buildbot-0x,$(shell python -c 'import os;print os.uname()[1][:11]')),)
-
-    ifdef SM_NIGHTLY
-        SM_BUILDTYPE := NIGHTLY
-    endif
-    ifdef SM_EXPERIMENTAL
-        SM_BUILDTYPE := EXPERIMENTAL
-    endif
-    ifdef SM_RELEASE
-        SM_BUILDTYPE := RELEASE
-        WITH_DEXPREOPT := true
-    endif
-    ifdef SM_HISTORY
-        SM_BUILDTYPE := HISTORY
-        WITH_DEXPREOPT := true
-    endif
-endif
 
 ifdef SM_BUILDTYPE
     ifdef SM_EXTRAVERSION
@@ -299,11 +279,11 @@ ifdef SM_BUILDTYPE
     endif
 else
     # If SM_BUILDTYPE is not defined, set to UNOFFICIAL
-    SM_BUILDTYPE := OFFICIAL
+    SM_BUILDTYPE := UNOFFICIAL
     SM_EXTRAVERSION :=
 endif
 
-ifneq ($(filter RELEASE HISTORY,$(SM_BUILDTYPE)),)
+ifneq ($(filter RELEASE,$(SM_BUILDTYPE)),)
     ifdef SM_BUILD_DATE
         SM_VERSION := SM$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(SM_BUILD)-$(SM_BUILD_DATE)-$(SM_BUILDTYPE)
     else
