@@ -178,8 +178,8 @@ PRODUCT_PACKAGES += \
     Eleven \
     LockClock \
     SudaLauncher \
-    PhoneLocationProvider
-#SudaModUpdater 
+    PhoneLocationProvider \
+    CMSettingsProvider
 
 # CM Platform Library
 PRODUCT_PACKAGES += \
