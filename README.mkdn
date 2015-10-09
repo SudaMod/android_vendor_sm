@@ -6,7 +6,11 @@ Getting Started
 
 ###Initializing the environment
 
-[Hint: This command updates the Ubuntu Packages List (Install Listing) and install the required version of Java]
+    repo start sm-2.0 .
+    (Make your changes and commit)
+    repo upload .
+Note: "." meaning current directory
+For more help on using this tool, use this command: repo help upload
 
     $ sudo apt-get install openjdk-7-jdk
 
@@ -46,12 +50,12 @@ Creating directory for where the SudaMod repo will be stored and synced
 
 Initializing the SudaMod repo and downloading the manifest
 
-    $ repo init -u git://github.com/SudaMod/android.git -b sm-1.1
+    $ repo init -u git://github.com/SudaMod/android.git -b sm-2.0
 Then to sync up:
 
     $ repo sync --force-sync -j8
 
-[Hint: This might take a long time as the source is about 13GB+]
+[Hint: This might take a long time as the source is about 15GB+]
 
 
 ###Setting Up CCache

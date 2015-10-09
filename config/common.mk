@@ -260,6 +260,12 @@ else
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.root_access=0
 
+PRODUCT_PACKAGE_OVERLAYS += vendor/cm/overlay/common
+
+PRODUCT_VERSION_MAJOR = 13
+PRODUCT_VERSION_MINOR = 0
+PRODUCT_VERSION_MAINTENANCE = 0-RC0
+
 endif
 
 # Chromium Prebuilt
@@ -304,7 +310,7 @@ ifndef CM_PLATFORM_SDK_VERSION
   # the SDK are released.  It should only be incremented when the APIs for
   # the new release are frozen (so that developers don't write apps against
   # intermediate builds).
-  CM_PLATFORM_SDK_VERSION := 3
+  CM_PLATFORM_SDK_VERSION := 4
 endif
 
 ifndef CM_PLATFORM_REV
