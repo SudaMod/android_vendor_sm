@@ -118,10 +118,6 @@ PRODUCT_COPY_FILES += \
  vendor/sm/prebuilt/common/supersu/UPDATE-SuperSU.zip:supersu/UPDATE-SuperSU.zip \
  vendor/sm/prebuilt/common/etc/init.d/99SuperSUDaemon:system/etc/init.d/99SuperSUDaemon
 
-# MarkApi
-PRODUCT_COPY_FILES += \
- vendor/sm/prebuilt/common/lib/libmarkapi.so:system/lib/libmarkapi.so
-
 # Bring in camera effects
 PRODUCT_COPY_FILES +=  \
     vendor/sm/prebuilt/common/media/LMprec_508.emd:system/media/LMprec_508.emd \
