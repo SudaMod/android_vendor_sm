@@ -44,7 +44,7 @@ PRODUCT_COPY_FILES += \
     $(RINGTONE_PATH)/boosted/Highscore.ogg:system/media/audio/ringtones/Highscore.ogg \
     $(RINGTONE_PATH)/boosted/Lyon.ogg:system/media/audio/ringtones/Lyon.ogg \
     $(RINGTONE_PATH)/boosted/Rockin.ogg:system/media/audio/ringtones/Rockin.ogg
-else
+endif
 PRODUCT_COPY_FILES += \
     $(RINGTONE_PATH)/Awake.ogg:system/media/audio/ringtones/Awake.ogg \
     $(RINGTONE_PATH)/Callisto.ogg:system/media/audio/ringtones/Callisto.ogg \
@@ -65,7 +65,6 @@ PRODUCT_COPY_FILES += \
     $(RINGTONE_PATH)/Titania.ogg:system/media/audio/ringtones/Titania.ogg \
     $(RINGTONE_PATH)/Triton.ogg:system/media/audio/ringtones/Triton.ogg \
     $(RINGTONE_PATH)/Umbriel.ogg:system/media/audio/ringtones/Umbriel.ogg
-endif
 
 # UI
 PRODUCT_COPY_FILES += \
