@@ -8,6 +8,9 @@ include vendor/sm/config/sm_audio.mk
 PRODUCT_PACKAGES += \
     LiveWallpapers \
     LiveWallpapersPicker \
+    MagicSmokeWallpapers \
+    NoiseField \
+    PhaseBeam \
     PhotoTable \
     SoundRecorder \
     PhotoPhase
