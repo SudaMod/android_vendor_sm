@@ -279,7 +279,7 @@ ifdef SM_BUILDTYPE
     endif
 else
     # If SM_BUILDTYPE is not defined, set to UNOFFICIAL
-    SM_BUILDTYPE := SudaMod-v1.1
+    SM_BUILDTYPE := UNOFFICIAL
     SM_EXTRAVERSION :=
 endif
 
