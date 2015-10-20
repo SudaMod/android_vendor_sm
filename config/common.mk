@@ -322,14 +322,14 @@ PRODUCT_PROPERTY_OVERRIDES += \
   ro.sm.releasetype=$(SM_BUILDTYPE) \
   ro.modversion=$(SM_VERSION)
 
--include vendor/sm-priv/keys/keys.mk
+# CyanogenMod Platform SDK Version
+PRODUCT_PROPERTY_OVERRIDES += \
+  ro.cm.build.version.plat.sdk=$(CM_PLATFORM_SDK_VERSION)
 
 # CyanogenMod Platform Internal
 PRODUCT_PROPERTY_OVERRIDES += \
   ro.cm.build.version.plat.rev=$(CM_PLATFORM_REV)
 
 -include $(WORKSPACE)/build_env/image-auto-bits.mk
-
--include $(WORKSPACE)/build-env/image-auto-bits.mk
 
 $(call prepend-product-if-exists, vendor/extra/product.mk)
