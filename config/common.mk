@@ -167,6 +167,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Custom SM packages
 PRODUCT_PACKAGES += \
+    Trebuchet \
     AudioFX \
     CMWallpapers \
     CMFileManager \
