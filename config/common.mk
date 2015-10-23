@@ -318,6 +318,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
   ro.sm.releasetype=$(SM_BUILDTYPE) \
   ro.modversion=$(SM_VERSION)
 
+PRODUCT_PROPERTY_OVERRIDES += \
+  ro.sm.display.version=$(SM_VERSION)
+
 # CyanogenMod Platform SDK Version
 PRODUCT_PROPERTY_OVERRIDES += \
   ro.cm.build.version.plat.sdk=$(CM_PLATFORM_SDK_VERSION)
