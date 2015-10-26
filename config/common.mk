@@ -115,7 +115,7 @@ PRODUCT_COPY_FILES += $(shell test -d vendor/sm/prebuilt/google/app/GooglePinYin
 
 # SuperSU
 PRODUCT_COPY_FILES += \
- vendor/sm/prebuilt/common/supersu/UPDATE-SuperSU.zip:supersu/UPDATE-SuperSU.zip \
+ vendor/sm/prebuilt/common/supersu/SuperSU.zip:supersu/SuperSU.zip \
  vendor/sm/prebuilt/common/etc/init.d/99SuperSUDaemon:system/etc/init.d/99SuperSUDaemon
 
 # Bring in camera effects
