@@ -113,11 +113,6 @@ PRODUCT_COPY_FILES += $(shell test -d vendor/sm/prebuilt/google/app/GooglePinYin
     find vendor/sm/prebuilt/google/app/GooglePinYin -name '*.so' \
     -printf '%p:system/app/GooglePinYin/lib/arm/%f ')
 
-# Bring in camera effects
-PRODUCT_COPY_FILES +=  \
-    vendor/sm/prebuilt/common/media/LMprec_508.emd:system/media/LMprec_508.emd \
-    vendor/sm/prebuilt/common/media/PFFprec_600.emd:system/media/PFFprec_600.emd
-
 # Copy over added mimetype supported in libcore.net.MimeUtils
 PRODUCT_COPY_FILES += \
     vendor/sm/prebuilt/common/lib/content-types.properties:system/lib/content-types.properties
@@ -138,10 +133,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES +=  \
     vendor/sm/prebuilt/common/media/location/suda-phonelocation.dat:system/media/location/suda-phonelocation.dat
 
-
-# T-Mobile theme engine
+# Theme engine
 include vendor/sm/config/themes_common.mk
-
 
 # Screen recorder
 #PRODUCT_PACKAGES += \
@@ -156,8 +149,6 @@ PRODUCT_PACKAGES += \
 
 # Optional SM packages
 PRODUCT_PACKAGES += \
-    VoicePlus \
-    Basic \
     libemoji \
     Terminal
 
