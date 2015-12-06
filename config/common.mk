@@ -152,11 +152,16 @@ PRODUCT_PACKAGES += \
     libemoji \
     Terminal
 
+
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.radio.ipcall.enabled=true
 
 
-# Custom SM packages
+# Include librsjni explicitly to workaround GMS issue
+PRODUCT_PACKAGES += \
+    librsjni
+
+# Custom CM packages
 PRODUCT_PACKAGES += \
     Trebuchet \
     AudioFX \
@@ -183,14 +188,10 @@ PRODUCT_PACKAGES += \
 # Extra tools in SM
 PRODUCT_PACKAGES += \
     libsepol \
-    e2fsck \
     mke2fs \
     tune2fs \
     nano \
     htop \
-    mkfs.f2fs \
-    fsck.f2fs \
-    fibmap.f2fs \
     mkfs.ntfs \
     fsck.ntfs \
     mount.ntfs \
