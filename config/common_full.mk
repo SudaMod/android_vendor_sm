@@ -13,7 +13,8 @@ PRODUCT_PACKAGES += \
     PhaseBeam \
     PhotoTable \
     SoundRecorder \
-    PhotoPhase
+    PhotoPhase \
+    Screencast
 
 # Extra tools in SM
 PRODUCT_PACKAGES += \
