@@ -136,11 +136,6 @@ PRODUCT_COPY_FILES +=  \
 # Theme engine
 include vendor/sm/config/themes_common.mk
 
-# Screen recorder
-#PRODUCT_PACKAGES += \
-#    libscreenrecorder \
-#    ScreenRecorder
-
 # Required SM packages
 PRODUCT_PACKAGES += \
     Development \
