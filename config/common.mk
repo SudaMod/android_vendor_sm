@@ -234,6 +234,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     media.sf.omx-plugin=libffmpeg_omx.so \
     media.sf.extractor-plugin=libffmpeg_extractor.so
 
+
 # These packages are excluded from user builds
 ifneq ($(TARGET_BUILD_VARIANT),user)
 
@@ -256,7 +257,7 @@ ifeq ($(PRODUCT_PREBUILT_WEBVIEWCHROMIUM),yes)
 -include prebuilts/chromium/$(SM_BUILD)/chromium_prebuilt.mk
 endif
 
-PRODUCT_PACKAGE_OVERLAYS += vendor/sm/overlay/common
+DEVICE_PACKAGE_OVERLAYS += vendor/sm/overlay/common
 
 PRODUCT_VERSION_MAJOR = 60
 PRODUCT_VERSION_MINOR = 1
