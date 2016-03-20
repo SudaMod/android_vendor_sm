@@ -116,8 +116,8 @@ PRODUCT_COPY_FILES += $(shell test -d vendor/sm/prebuilt/google/app/GooglePinYin
 # ViPER4Android
 ifneq ($(filter armeabi armeabi-v7a,$(SM_CPU_ABI)),)
 PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*,vendor/mk/prebuilt/viper/app,system/app) \
-    $(call find-copy-subdir-files,*.so,vendor/mk/prebuilt/viper/lib/armeabi-v7a/soundfx,system/lib/soundfx)
+    $(call find-copy-subdir-files,*,vendor/sm/prebuilt/viper/app,system/app) \
+    $(call find-copy-subdir-files,*.so,vendor/sm/prebuilt/viper/lib/armeabi-v7a/soundfx,system/lib/soundfx)
 endif
 
 # Copy over added mimetype supported in libcore.net.MimeUtils
