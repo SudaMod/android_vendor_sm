@@ -120,7 +120,7 @@ PRODUCT_COPY_FILES += \
 # ViPER4Android
 ifneq ($(filter armeabi armeabi-v7a,$(SM_CPU_ABI)),)
 PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*,vendor/sm/prebuilt/viper/priv-app,system/app) \
+    $(call find-copy-subdir-files,*,vendor/sm/prebuilt/viper/app,system/priv-app) \
     $(call find-copy-subdir-files,*.so,vendor/sm/prebuilt/viper/lib/armeabi-v7a/soundfx,system/lib/soundfx)
 endif
 
