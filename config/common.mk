@@ -179,7 +179,9 @@ PRODUCT_PACKAGES += \
     SudaLauncher \
     PhoneLocationProvider \
     CMSettingsProvider \
-    ExactCalculator
+    ExactCalculator \
+    LiveLockScreenService \
+    WeatherProvider
 
 ifeq ($(filter armeabi armeabi-v7a,$(SM_CPU_ABI)),)
 PRODUCT_PACKAGES += \
