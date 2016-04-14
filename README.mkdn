@@ -6,11 +6,7 @@ Getting Started
 
 ###Initializing the environment
 
-    repo start sm-2.0 .
-    (Make your changes and commit)
-    repo upload .
-Note: "." meaning current directory
-For more help on using this tool, use this command: repo help upload
+[Hint: This command updates the Ubuntu Packages List (Install Listing) and install the required version of Java]
 
     $ sudo apt-get install openjdk-7-jdk
 
@@ -18,7 +14,7 @@ Let that install and then proceed. More copy and paste:
 
 [Hint: Running this command installs the other required packages to build android]
 
-    $ sudo apt-get update && sudo apt-get install git-core gnupg flex bison gperf libsdl1.2-dev libesd0-dev libwxgtk2.8-dev squashfs-tools build-essential zip curl libncurses5-dev zlib1g-dev openjdk-6-jre openjdk-6-jdk pngcrush schedtool libxml2 libxml2-utils xsltproc lzop libc6-dev schedtool g++-multilib lib32z1-dev lib32ncurses5-dev lib32readline-gplv2-dev gcc-multilib
+    $ sudo apt-get update && sudo apt-get install git-core gnupg flex bison gperf libsdl1.2-dev libesd0-dev libwxgtk2.8-dev squashfs-tools build-essential zip curl libncurses5-dev zlib1g-dev openjdk-7-jre openjdk-7-jdk pngcrush schedtool libxml2 libxml2-utils xsltproc lzop libc6-dev schedtool g++-multilib lib32z1-dev lib32ncurses5-dev gcc-multilib maven tmux screen w3m ncftp liblz4-tool
 
 ###Getting the Source
 
@@ -51,11 +47,13 @@ Creating directory for where the SudaMod repo will be stored and synced
 Initializing the SudaMod repo and downloading the manifest
 
     $ repo init -u git://github.com/SudaMod/android.git -b sm-2.0
-Then to sync up:
+    
+Syncing the source
 
-    $ repo sync --force-sync -j8
+[Hint: This might take a long time as the source is about 13GB+]
 
-[Hint: This might take a long time as the source is about 15GB+]
+    $  repo sync -c -f -j8 --force-sync --no-clone-bundle
+
 
 
 ###Setting Up CCache
