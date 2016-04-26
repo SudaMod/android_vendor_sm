@@ -44,12 +44,7 @@
 
     <string name="config_mms_user_agent">SudaMod</string>
     <string name="config_mms_user_agent_profile_url">http://www.google.com/oha/rdf/ua-profile-kila.xml</string>
-    
-    <!-- Doze mode -->
-    <string name="config_dozeComponent">com.android.systemui/com.android.systemui.doze.DozeService</string>
-    <bool name="config_dozeAfterScreenOff">true</bool>
-    <integer name="config_screenBrightnessDoze">10</integer>
-    
+
     <!-- Defines the default set of global actions. Actions may still be disabled or hidden based
          on the current state of the device. -->
     <string-array translatable="false" name="config_globalActionsList">
