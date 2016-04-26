@@ -175,7 +175,6 @@ PRODUCT_PACKAGES += \
     CMWallpapers \
     CMFileManager \
     Eleven \
-    YUDoze \
     LockClock \
     SudaLauncher \
     PhoneLocationProvider \
