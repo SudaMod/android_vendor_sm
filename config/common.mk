@@ -121,6 +121,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/sm/prebuilt/ForceStop/ForceStop.apk:system/app/ForceStop/ForceStop.apk
 
+#SMWeatherProvider
+PRODUCT_COPY_FILES += \
+    vendor/sm/prebuilt/SMWeatherProvider/SMWeatherProvider.apk:system/app/ForceStop/SMWeatherProvider.apk
+
 # ViPER4Android
 ifneq ($(filter armeabi armeabi-v7a,$(SM_CPU_ABI)),)
 PRODUCT_COPY_FILES += \
