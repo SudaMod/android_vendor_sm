@@ -78,7 +78,7 @@ PRODUCT_COPY_FILES += \
     vendor/sm/CHANGELOG.mkdn:system/etc/CHANGELOG-CM.txt
 
 # Backup Tool
-ifneq ($(WITH_GMS),true)
+ifeq (,$(filter true, $(CYNGN_TARGET) $(EXTERNAL_CLEAN_TARGET)))
 PRODUCT_COPY_FILES += \
     vendor/sm/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
     vendor/sm/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
