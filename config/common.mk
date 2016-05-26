@@ -78,13 +78,11 @@ PRODUCT_COPY_FILES += \
     vendor/sm/CHANGELOG.mkdn:system/etc/CHANGELOG-CM.txt
 
 # Backup Tool
-ifeq (,$(filter true, $(CYNGN_TARGET) $(EXTERNAL_CLEAN_TARGET)))
 PRODUCT_COPY_FILES += \
     vendor/sm/prebuilt/common/bin/backuptool.sh:install/bin/backuptool.sh \
     vendor/sm/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
     vendor/sm/prebuilt/common/bin/50-sm.sh:system/addon.d/50-sm.sh \
     vendor/sm/prebuilt/common/bin/blacklist:system/addon.d/blacklist
-endif
 
 # Signature compatibility validation
 PRODUCT_COPY_FILES += \
