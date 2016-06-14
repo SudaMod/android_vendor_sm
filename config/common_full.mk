@@ -1,6 +1,8 @@
 # Inherit common SM stuff
 $(call inherit-product, vendor/sm/config/common.mk)
 
+PRODUCT_SIZE := full
+
 # Include SM audio files
 include vendor/sm/config/sm_audio.mk
 
