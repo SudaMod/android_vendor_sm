@@ -1,9 +1,9 @@
-# Inherit common CM stuff
+# Inherit common SM stuff
 $(call inherit-product, vendor/sm/config/common.mk)
 
 PRODUCT_SIZE := mini
 
-# Include CM audio files
+# Include SM audio files
 include vendor/sm/config/sm_audio.mk
 
 # Default notification/alarm sounds
