@@ -188,7 +188,8 @@ PRODUCT_PACKAGES += \
     ExactCalculator \
     LiveLockScreenService \
     WeatherProvider \
-    DataUsageProvider
+    DataUsageProvider \
+    WallpaperPicker
 
 ifeq ($(filter armeabi armeabi-v7a,$(SM_CPU_ABI)),)
 PRODUCT_PACKAGES += \
