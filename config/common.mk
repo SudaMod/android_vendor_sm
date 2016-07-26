@@ -161,6 +161,7 @@ include vendor/sm/config/themes_common.mk
 include vendor/sm/config/cmsdk_common.mk
 
 PRODUCT_PACKAGES += \
+    CMAudioService \
     Development \
     BluetoothExt \
     Profiles
