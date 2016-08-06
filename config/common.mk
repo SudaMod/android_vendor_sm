@@ -164,7 +164,8 @@ PRODUCT_PACKAGES += \
     CMAudioService \
     Development \
     BluetoothExt \
-    Profiles
+    Profiles \
+    ThemeManagerService
 
 # Optional SM packages
 PRODUCT_PACKAGES += \
@@ -267,7 +268,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.root_access=1
 else
-
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.root_access=0
 
