@@ -165,7 +165,8 @@ PRODUCT_PACKAGES += \
     Development \
     BluetoothExt \
     Profiles \
-    ThemeManagerService
+    ThemeManagerService \
+    WeatherManagerService
 
 # Optional SM packages
 PRODUCT_PACKAGES += \
