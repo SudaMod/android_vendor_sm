@@ -17,8 +17,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     org.cyanogenmod.platform-res \
     org.cyanogenmod.platform \
-    org.cyanogenmod.platform.xml \
-    org.cyanogenmod.platform.sdk
+    org.cyanogenmod.platform.xml
 
 # CM Hardware Abstraction Framework
 PRODUCT_PACKAGES += \
