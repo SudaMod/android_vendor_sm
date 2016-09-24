@@ -159,8 +159,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES +=  \
     vendor/sm/prebuilt/common/media/location/suda-phonelocation.dat:system/media/location/suda-phonelocation.dat
 
-# Include CM audio files
-include vendor/cm/config/cm_audio.mk
+# Include SM audio files
+include vendor/sm/config/cm_audio.mk
 
 # Theme engine
 include vendor/sm/config/themes_common.mk
