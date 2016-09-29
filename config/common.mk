@@ -341,7 +341,6 @@ else
 endif
 
 PRODUCT_PROPERTY_OVERRIDES += \
-<<<<<<< HEAD
   ro.sm.version=$(SM_VERSION) \
   ro.sm.releasetype=$(SM_BUILDTYPE) \
   ro.modversion=$(SM_VERSION)
