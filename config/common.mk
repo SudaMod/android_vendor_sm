@@ -341,9 +341,18 @@ else
 endif
 
 PRODUCT_PROPERTY_OVERRIDES += \
+<<<<<<< HEAD
   ro.sm.version=$(SM_VERSION) \
   ro.sm.releasetype=$(SM_BUILDTYPE) \
   ro.modversion=$(SM_VERSION)
+
+ifeq ($(OTA_PACKAGE_SIGNING_KEY),)
+    PRODUCT_EXTRA_RECOVERY_KEYS += \
+        vendor/cm/build/target/product/security/cm \
+        vendor/cm/build/target/product/security/cm-devkey
+endif
+
+-include vendor/cm-priv/keys/keys.mk
 
 PRODUCT_PROPERTY_OVERRIDES += \
   ro.sm.display.version=$(SM_VERSION)
