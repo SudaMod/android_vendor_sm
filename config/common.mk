@@ -120,25 +120,6 @@ PRODUCT_COPY_FILES += $(shell test -d vendor/sm/prebuilt/google/app/GooglePinYin
     find vendor/sm/prebuilt/google/app/GooglePinYin -name '*.so' \
     -printf '%p:system/app/GooglePinYin/lib/arm/%f ')
 
-#AMapNetworkLocation
-PRODUCT_COPY_FILES += \
-    vendor/sm/prebuilt/AMapNetworkLocation/AMapNetworkLocation.apk:system/priv-app/AMapNetworkLocation/AMapNetworkLocation.apk
-
-#ForceStop
-PRODUCT_COPY_FILES += \
-    vendor/sm/prebuilt/ForceStop/ForceStop.apk:system/app/ForceStop/ForceStop.apk
-
-#SMWeatherProvider
-PRODUCT_COPY_FILES += \
-    vendor/sm/prebuilt/SMWeatherProvider/SMWeatherProvider.apk:system/app/SMWeatherProvider/SMWeatherProvider.apk
-
-# ViPER4Android
-ifneq ($(filter armeabi armeabi-v7a,$(SM_CPU_ABI)),)
-PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*,vendor/sm/prebuilt/viper/app,system/priv-app) \
-    $(call find-copy-subdir-files,*.so,vendor/sm/prebuilt/viper/lib/armeabi-v7a/soundfx,system/lib/soundfx)
-endif
-
 # Copy over added mimetype supported in libcore.net.MimeUtils
 PRODUCT_COPY_FILES += \
     vendor/sm/prebuilt/common/lib/content-types.properties:system/lib/content-types.properties
@@ -195,6 +176,7 @@ PRODUCT_PACKAGES += \
 # Custom CM packages
 PRODUCT_PACKAGES += \
     Trebuchet \
+    AudioFX \
     CMWallpapers \
     CMFileManager \
     Eleven \
@@ -207,11 +189,6 @@ PRODUCT_PACKAGES += \
     WeatherProvider \
     SoundRecorder \
     Screencast
-
-ifeq ($(filter armeabi armeabi-v7a,$(SM_CPU_ABI)),)
-PRODUCT_PACKAGES += \
-    AudioFX
-endif
 
 # Exchange support
 PRODUCT_PACKAGES += \
