@@ -120,6 +120,10 @@ PRODUCT_COPY_FILES += $(shell test -d vendor/sm/prebuilt/google/app/GooglePinYin
     find vendor/sm/prebuilt/google/app/GooglePinYin -name '*.so' \
     -printf '%p:system/app/GooglePinYin/lib/arm/%f ')
 
+#ForceStop
+PRODUCT_COPY_FILES += \
+    vendor/sm/prebuilt/ForceStop/ForceStop.apk:system/app/ForceStop/ForceStop.apk
+
 # Copy over added mimetype supported in libcore.net.MimeUtils
 PRODUCT_COPY_FILES += \
     vendor/sm/prebuilt/common/lib/content-types.properties:system/lib/content-types.properties
