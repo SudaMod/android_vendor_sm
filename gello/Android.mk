@@ -27,12 +27,12 @@ LOCAL_OVERRIDES_PACKAGES := Browser
 
 ifeq ($(WITH_GELLO_SOURCE),true)
 # Build from source
-ifeq ($(LOCAL_GELLO),true)
-BUILD_GELLO := $(info $(shell bash $(SOURCE_GELLO_PATH)/gello_build.sh --local 1>&2))
-else
-BUILD_GELLO := $(info $(shell bash $(SOURCE_GELLO_PATH)/gello_build.sh 1>&2))
-endif
-LOCAL_SRC_FILES := ../../../external/gello-build/Gello.apk
+#ifeq ($(LOCAL_GELLO),true)
+#BUILD_GELLO := $(info $(shell bash $(SOURCE_GELLO_PATH)/gello_build.sh --local 1>&2))
+#else
+#BUILD_GELLO := $(info $(shell bash $(SOURCE_GELLO_PATH)/gello_build.sh 1>&2))
+#endif
+LOCAL_SRC_FILES := Gello.apk
 include $(BUILD_PREBUILT)
 else
 
