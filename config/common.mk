@@ -164,9 +164,9 @@ PRODUCT_PACKAGES += \
 # Optional SM packages
 PRODUCT_PACKAGES += \
     libemoji \
-    Terminal \
     LiveWallpapersPicker \
-    PhotoTable
+    PhotoTable \
+    Terminal
 
 
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -179,9 +179,7 @@ PRODUCT_PACKAGES += \
 
 # Custom CM packages
 PRODUCT_PACKAGES += \
-    Trebuchet \
     AudioFX \
-    CMWallpapers \
     CMFileManager \
     Eleven \
     LockClock \
@@ -189,10 +187,14 @@ PRODUCT_PACKAGES += \
     PhoneLocationProvider \
     CMSettingsProvider \
     ExactCalculator \
+    Launcher3 \
     LiveLockScreenService \
-    WeatherProvider \
+    LockClock \
+    Screencast \
     SoundRecorder \
-    Screencast
+    Trebuchet \
+    WallpaperPicker \
+    WeatherProvider
 
 # Exchange support
 PRODUCT_PACKAGES += \
@@ -200,26 +202,25 @@ PRODUCT_PACKAGES += \
 
 # Extra tools in SM
 PRODUCT_PACKAGES += \
-    libsepol \
-    mke2fs \
-    tune2fs \
-    nano \
-    htop \
-    mkfs.ntfs \
-    fsck.ntfs \
-    mount.ntfs \
-    gdbserver \
-    micro_bench \
-    oprofiled \
-    sqlite3 \
-    strace \
-    pigz \
     7z \
-    lib7z \
     bash \
     bzip2 \
     curl \
+    fsck.ntfs \
+    gdbserver \
+    htop \
+    lib7z \
+    libsepol \
+    micro_bench \
+    mke2fs \
+    mkfs.ntfs \
+    mount.ntfs \
+    oprofiled \
+    pigz \
     powertop \
+    sqlite3 \
+    strace \
+    tune2fs \
     unrar \
     unzip \
     vim \
@@ -269,6 +270,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
     media.sf.omx-plugin=libffmpeg_omx.so \
     media.sf.extractor-plugin=libffmpeg_extractor.so
 
+# Telephony
+PRODUCT_PACKAGES += \
+    telephony-ext
+
+PRODUCT_BOOT_JARS += \
+    telephony-ext
 
 # These packages are excluded from user builds
 ifneq ($(TARGET_BUILD_VARIANT),user)
