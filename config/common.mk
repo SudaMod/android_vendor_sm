@@ -287,6 +287,8 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.root_access=1
+
+DEVICE_PACKAGE_OVERLAYS += vendor/sm/overlay/common
 else
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.root_access=0
