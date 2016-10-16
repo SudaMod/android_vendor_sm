@@ -63,6 +63,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.build.selinux=1
 
+# Default notification/alarm sounds
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.config.notification_sound=Argon.ogg \
+    ro.config.alarm_alert=Helium.ogg
+
 ifneq ($(TARGET_BUILD_VARIANT),user)
 # Thank you, please drive thru!
 PRODUCT_PROPERTY_OVERRIDES += persist.sys.dun.override=0
@@ -154,6 +159,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES +=  \
     vendor/sm/prebuilt/common/media/location/suda-phonelocation.dat:system/media/location/suda-phonelocation.dat
 
+# Include SM audio files
+include vendor/sm/config/sm_audio.mk
+
 # Theme engine
 include vendor/sm/config/themes_common.mk
 
@@ -171,7 +179,8 @@ PRODUCT_PACKAGES += \
 # Optional SM packages
 PRODUCT_PACKAGES += \
     libemoji \
-    Terminal
+    Terminal \
+    LiveWallpapersPicker
 
 
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -196,7 +205,9 @@ PRODUCT_PACKAGES += \
     LiveLockScreenService \
     WeatherProvider \
     DataUsageProvider \
-    WallpaperPicker
+    WallpaperPicker \
+    SoundRecorder \
+    Screencast
 
 ifeq ($(filter armeabi armeabi-v7a,$(SM_CPU_ABI)),)
 PRODUCT_PACKAGES += \
@@ -222,7 +233,18 @@ PRODUCT_PACKAGES += \
     oprofiled \
     sqlite3 \
     strace \
-    pigz
+    pigz \
+    7z \
+    lib7z \
+    bash \
+    bzip2 \
+    curl \
+    powertop \
+    unrar \
+    unzip \
+    vim \
+    wget \
+    zip
 
 # Custom off-mode charger
 ifneq ($(WITH_CM_CHARGER),false)
@@ -278,6 +300,8 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.root_access=1
+
+DEVICE_PACKAGE_OVERLAYS += vendor/sm/overlay/common
 else
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.root_access=0
