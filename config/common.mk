@@ -289,6 +289,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.root_access=1
 
 DEVICE_PACKAGE_OVERLAYS += vendor/sm/overlay/common
+
 else
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.root_access=0
@@ -302,7 +303,7 @@ endif
 
 DEVICE_PACKAGE_OVERLAYS += vendor/sm/overlay/common
 
-PRODUCT_VERSION_MAJOR = 70
+PRODUCT_VERSION_MAJOR = 71
 PRODUCT_VERSION_MINOR = 0
 
 ifdef SM_BUILDTYPE
