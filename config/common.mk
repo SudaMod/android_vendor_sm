@@ -207,7 +207,8 @@ PRODUCT_PACKAGES += \
     DataUsageProvider \
     WallpaperPicker \
     SoundRecorder \
-    Screencast
+    Screencast \
+    MiPop
 
 ifeq ($(filter armeabi armeabi-v7a,$(SM_CPU_ABI)),)
 PRODUCT_PACKAGES += \
