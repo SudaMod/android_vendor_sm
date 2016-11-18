@@ -15,7 +15,7 @@ bootanimation_sizes := $(subst .zip,,$(shell ls -1 vendor/sm/prebuilt/common/boo
 # find the appropriate size and set
 define check_and_set_bootanimation
 $(eval TARGET_BOOTANIMATION_NAME := $(shell \
-  if [ -z "$(TARGET_BOOTANIMATION_NAME)" ]; then
+  if [ -z "$(TARGET_BOOTANIMATION_NAME)" ]; then \
     if [ "$(1)" -le "$(TARGET_BOOTANIMATION_SIZE)" ]; then \
       echo $(1); \
       exit 0; \
@@ -30,14 +30,6 @@ PRODUCT_BOOTANIMATION := vendor/sm/prebuilt/common/bootanimation/halfres/$(TARGE
 else
 PRODUCT_BOOTANIMATION := vendor/sm/prebuilt/common/bootanimation/$(TARGET_BOOTANIMATION_NAME).zip
 endif
-endif
-
-ifdef SM_NIGHTLY
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.rommanager.developerid=sudamodnightly
-else
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.rommanager.developerid=sudamod
 endif
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
