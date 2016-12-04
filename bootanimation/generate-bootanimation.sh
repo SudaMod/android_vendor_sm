@@ -19,6 +19,11 @@ fi
 
 RESOLUTION=""$IMAGESIZE"x"$IMAGESIZE""
 
+if  [ "$SIZE" = "1080" ]; then
+cp "vendor/sm/bootanimation/1080.zip" "$OUT/bootanimation.zip"
+elif  [ "$SIZE" = "720" ]; then
+cp "vendor/sm/bootanimation/720.zip" "$OUT/bootanimation.zip"
+else
 for part_cnt in 0 1 2
 do
     mkdir -p $ANDROID_PRODUCT_OUT/obj/BOOTANIMATION/bootanimation/part$part_cnt
@@ -33,3 +38,4 @@ cat "vendor/sm/bootanimation/desc.txt" >> "$OUT/bootanimation/desc.txt"
 cd "$OUT/bootanimation"
 
 zip -qr0 "$OUT/bootanimation.zip" .
+fi
