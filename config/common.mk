@@ -144,10 +144,6 @@ include vendor/sm/config/themes_common.mk
 # CMSDK
 include vendor/sm/config/cmsdk_common.mk
 
-# Bootanimation
-PRODUCT_PACKAGES += \
-    bootanimation.zip
-
 # Required SM packages
 PRODUCT_PACKAGES += \
     BluetoothExt \
