@@ -113,7 +113,7 @@ PRODUCT_COPY_FILES += $(shell test -d vendor/sm/prebuilt/google/app/GooglePinYin
 
 #ForceStop
 PRODUCT_COPY_FILES += \
-    vendor/sm/prebuilt/ForceStop/ForceStop.apk:system/app/ForceStop/ForceStop.apk
+    vendor/sm/prebuilt/Brevent/Brevent.apk:system/app/Brevent/Brevent.apk
 
 # Copy over added mimetype supported in libcore.net.MimeUtils
 PRODUCT_COPY_FILES += \
