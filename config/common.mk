@@ -175,7 +175,6 @@ PRODUCT_PACKAGES += \
     PhoneLocationProvider \
     CMSettingsProvider \
     ExactCalculator \
-    Launcher3 \
     LiveLockScreenService \
     LockClock \
     Screencast \
