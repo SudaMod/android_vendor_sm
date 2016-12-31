@@ -1,6 +1,5 @@
 #!/sbin/sh
 # 
-# /system/addon.d/50-sm.sh
 # During a SM3.0 upgrade, this script backs up /system/etc/hosts,
 # /system is formatted and reinstalled, then the file is restored.
 #
