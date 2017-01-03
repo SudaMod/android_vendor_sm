@@ -20,8 +20,9 @@ Maintainers (LineageOS 14.1):
 * __Asus ZenPad 8.0 Z380KL:__ vm03
 * __B&N NookColor (encore):__ eyeballer, fattire, keyodi, krylon360, sluo (NookieDevs)
 * __B&N Nook Tablet (acclaim):__  chrmhoffmann
-* __BQ Aquaris E5 4G/E5 S (vegetalte):__  cmorlok, eloimuns, Kra1o5, stucki (bq-dev)
-* __BQ Aquaris M5 (piccolo):__  cmorlok, eloimuns, Kra1o5, stucki (bq-dev)
+* __BQ Aquaris E5 4G/E5 S (vegetalte):__  cmorlok, eloimuns, Kra1o5, stucki, brinlyau (bq-dev)
+* __BQ Aquaris M5 (piccolo):__  cmorlok, eloimuns, Kra1o5, stucki, brinlyau (bq-dev)
+* __BQ Aquaris X5 Plus (gohan):__  cmorlok, eloimuns, Kra1o5, stucki, brinlyau (bq-dev)
 * __Google Android One:__ varunchitre15
 * __Google Galaxy Nexus:__ Ziyan, musical_chairs
 * __Google Nexus S:__ burnsra, KalimochoAz, klusark
@@ -37,7 +38,6 @@ Maintainers (LineageOS 14.1):
 * __Google Nexus Player:__ dhacker29, bmc08gt
 * __HTC Desire 601(zara/zaracl):__ uberlaggydarwin, PatrikKT
 * __HTC Desire 816:__ Grarak, v_superuser
-* __HTC Desire Eye:__ uberlaggydarwin
 * __HTC Droid DNA:__ crpalmer, invisiblek
 * __HTC Droid Incredible 4G LTE:__ intervigil, mdmower
 * __HTC Evo 4G LTE:__ kushdeck, toastcfh
@@ -77,7 +77,6 @@ Maintainers (LineageOS 14.1):
 * __LG Optimus L90:__ Quarx2k, vm03, NikitaProAndroid
 * __LG Optimus LTE (P930) / LG Nitro HD {P935):__ arcee
 * __LG Optimus LTE (SK Telecom) (SU640):__ arcee
-* __LG V10 (T-Mobile) (H901):__ genesixxbf3
 * __Moto E 2014 (xt1021,xt1022,xt1023/condor):__
 * __Moto G 2014 (xt1063,xt1064,xt1068,xt1069/titan):__ LuK1337, luca020400
 * __Moto G 4G (xt1039,xt1040,xt1042,xt1045/peregrine):__ somcom3x, intervigil

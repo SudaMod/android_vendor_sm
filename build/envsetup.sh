@@ -59,7 +59,7 @@ function breakfast()
             # A buildtype was specified, assume a full device name
             lunch $target
         else
-            # This is probably just the CM model name
+            # This is probably just the Lineage model name
             if [ -z "$variant" ]; then
                 variant="userdebug"
             fi

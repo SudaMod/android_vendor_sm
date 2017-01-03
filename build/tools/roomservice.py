@@ -207,7 +207,6 @@ def parse_device_from_manifest(device):
             return project.get('path')
     return None
 
-
 def parse_device_from_folder(device):
     search = []
     for sub_folder in os.listdir("device"):
@@ -223,7 +222,6 @@ def parse_device_from_folder(device):
         print("your device can't be found in device sources..")
         location = parse_device_from_manifest(device)
     return location
-
 
 def parse_dependency_file(location):
     dep_file = "sm.dependencies"
