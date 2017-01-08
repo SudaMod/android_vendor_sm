@@ -137,6 +137,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     AudioFX \
     CMFileManager \
+    SMSetupWizard \
     Eleven \
     LockClock \
     SudaLauncher \
