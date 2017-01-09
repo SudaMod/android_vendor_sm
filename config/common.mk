@@ -139,8 +139,6 @@ PRODUCT_PACKAGES += \
     CMFileManager \
     SMSetupWizard \
     Eleven \
-    LockClock \
-    SudaLauncher \
     PhoneLocationProvider \
     CMSettingsProvider \
     ExactCalculator \
@@ -244,22 +242,8 @@ PRODUCT_PACKAGES += \
     procmem \
     procrank \
     su
-
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.sys.root_access=1
-
-DEVICE_PACKAGE_OVERLAYS += vendor/sm/overlay/common
-
-else
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.sys.root_access=0
-
 endif
 
-# Chromium Prebuilt
-ifeq ($(PRODUCT_PREBUILT_WEBVIEWCHROMIUM),yes)
--include prebuilts/chromium/$(SM_BUILD)/chromium_prebuilt.mk
-endif
 
 DEVICE_PACKAGE_OVERLAYS += vendor/sm/overlay/common
 
