@@ -103,6 +103,7 @@ include vendor/sm/config/sm_audio.mk
 # Theme engine
 include vendor/sm/config/themes_common.mk
 
+ifneq ($(TARGET_DISABLE_CMSDK), true)
 # CMSDK
 include vendor/sm/config/cmsdk_common.mk
 endif
