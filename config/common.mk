@@ -103,10 +103,8 @@ include vendor/sm/config/sm_audio.mk
 # Theme engine
 include vendor/sm/config/themes_common.mk
 
-ifneq ($(TARGET_DISABLE_CMSDK), true)
 # CMSDK
 include vendor/sm/config/cmsdk_common.mk
-endif
 
 # Bootanimation
 PRODUCT_PACKAGES += \
@@ -240,28 +238,8 @@ ifneq ($(TARGET_BUILD_VARIANT),user)
 
 PRODUCT_PACKAGES += \
     procmem \
-    procrank
-
-# Conditionally build in su
-ifeq ($(WITH_SU),true)
-PRODUCT_PACKAGES += \
+    procrank \
     su
-endif
-<<<<<<< HEAD
-=======
-endif
-
-DEVICE_PACKAGE_OVERLAYS += vendor/cm/overlay/common
-
-PRODUCT_VERSION_MAJOR = 14
-PRODUCT_VERSION_MINOR = 1
-PRODUCT_VERSION_MAINTENANCE := 0
-
-ifeq ($(TARGET_VENDOR_SHOW_MAINTENANCE_VERSION),true)
-    CM_VERSION_MAINTENANCE := $(PRODUCT_VERSION_MAINTENANCE)
-else
-    CM_VERSION_MAINTENANCE := 0
->>>>>>> 3c6bdac74bc212b26f723aa8697099fd636451a8
 endif
 
 
