@@ -7,4 +7,3 @@ then
    /system/bin/sh /data/local/userinit.sh;
    setprop sm.userinit.active 1;
 fi;
-

@@ -135,6 +135,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     AudioFX \
     CMFileManager \
+    CMUpdater \
     SMSetupWizard \
     Eleven \
     PhoneLocationProvider \
@@ -235,7 +236,6 @@ PRODUCT_BOOT_JARS += \
 
 # These packages are excluded from user builds
 ifneq ($(TARGET_BUILD_VARIANT),user)
-
 PRODUCT_PACKAGES += \
     procmem \
     procrank \
@@ -274,10 +274,10 @@ else
 endif
 
 PRODUCT_PROPERTY_OVERRIDES += \
-  ro.sm.version=$(SM_VERSION) \
-  ro.sm.releasetype=$(SM_BUILDTYPE) \
-  ro.modversion=$(SM_VERSION) \
-  ro.cmlegal.url=https://lineageos.org/legal
+    ro.sm.version=$(SM_VERSION) \
+    ro.sm.releasetype=$(SM_BUILDTYPE) \
+    ro.modversion=$(SM_VERSION) \
+    ro.cmlegal.url=https://lineageos.org/legal
 
 PRODUCT_EXTRA_RECOVERY_KEYS += \
     vendor/sm/build/target/product/security/lineage

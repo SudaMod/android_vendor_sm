@@ -7,4 +7,3 @@ PRODUCT_PACKAGES += \
 
 # Include SM LatinIME dictionaries
 PRODUCT_PACKAGE_OVERLAYS += vendor/sm/overlay/dictionaries
-
