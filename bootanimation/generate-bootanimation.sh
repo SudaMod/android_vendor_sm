@@ -30,7 +30,11 @@ tar xfp "vendor/sm/bootanimation/bootanimation.tar" --to-command="convert - -res
 
 # Create desc.txt
 echo "$IMAGESCALEWIDTH $IMAGESCALEHEIGHT" 30 > "$OUT/bootanimation/desc.txt"
+<<<<<<< HEAD
 cat "vendor/sm/bootanimation/desc.txt" >> "$OUT/bootanimation/desc.txt"
+=======
+cat "vendor/cm/bootanimation/desc.txt" >> "$OUT/bootanimation/desc.txt"
+>>>>>>> 3c6bdac74bc212b26f723aa8697099fd636451a8
 
 # Create bootanimation.zip
 cd "$OUT/bootanimation"
