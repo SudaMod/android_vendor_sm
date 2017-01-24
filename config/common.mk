@@ -72,6 +72,9 @@ PRODUCT_COPY_FILES += $(shell test -d vendor/sm/prebuilt/V4A/app/ViPER4Android &
     -printf '%p:system/app/ViPER4Android/%f ')
 PRODUCT_COPY_FILES += \
     vendor/sm/prebuilt/common/lib/soundfx/libv4a.so:system/lib/soundfx/libv4a.so
+else
+PRODUCT_PACKAGES += \
+    AudioFX
 endif
 
 # Google PinYin
@@ -146,7 +149,6 @@ PRODUCT_PACKAGES += \
 
 # Custom CM packages
 PRODUCT_PACKAGES += \
-    AudioFX \
     CMFileManager \
     SMSetupWizard \
     Eleven \
@@ -160,6 +162,8 @@ PRODUCT_PACKAGES += \
     Trebuchet \
     WallpaperPicker \
     WeatherProvider
+
+
 
 # Exchange support
 PRODUCT_PACKAGES += \
