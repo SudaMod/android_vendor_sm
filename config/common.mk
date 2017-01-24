@@ -1,4 +1,4 @@
-PRODUCT_BRAND ?= sudamod
+PRODUCT_BRAND ?= SudaMod
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 
@@ -65,6 +65,15 @@ endif
 PRODUCT_COPY_FILES += \
     vendor/sm/prebuilt/common/etc/init.local.rc:root/init.sm.rc
 
+# USE V4A
+ifeq ($(WITH_V4A),true)
+PRODUCT_COPY_FILES += $(shell test -d vendor/sm/prebuilt/V4A/app/ViPER4Android && \
+    find vendor/sm/prebuilt/V4A/app/ViPER4Android -name '*.apk' \
+    -printf '%p:system/app/ViPER4Android/%f ')
+PRODUCT_COPY_FILES += \
+    vendor/sm/prebuilt/common/lib/soundfx/libv4a.so:system/lib/soundfx/libv4a.so
+endif
+
 # Google PinYin
 PRODUCT_COPY_FILES += $(shell test -d vendor/sm/prebuilt/google/app/GooglePinYin && \
     find vendor/sm/prebuilt/google/app/GooglePinYin -name '*.apk' \
@@ -76,6 +85,10 @@ PRODUCT_COPY_FILES += $(shell test -d vendor/sm/prebuilt/google/app/GooglePinYin
 #ForceStop
 PRODUCT_COPY_FILES += \
     vendor/sm/prebuilt/Brevent/Brevent.apk:system/app/Brevent/Brevent.apk
+
+#SudaModUpdater
+PRODUCT_COPY_FILES += \
+    vendor/sm/prebuilt/SudaModUpdater/SudaModUpdater.apk:system/priv-app/SudaModUpdater/SudaModUpdater.apk
 
 # Copy over added mimetype supported in libcore.net.MimeUtils
 PRODUCT_COPY_FILES += \
@@ -135,7 +148,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     AudioFX \
     CMFileManager \
-    CMUpdater \
     SMSetupWizard \
     Eleven \
     PhoneLocationProvider \
@@ -265,12 +277,12 @@ endif
 
 ifneq ($(filter RELEASE,$(SM_BUILDTYPE)),)
     ifdef SM_BUILD_DATE
-        SM_VERSION := SM$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(SM_BUILD)-$(SM_BUILD_DATE)-$(SM_BUILDTYPE)
+        SM_VERSION := $(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(SM_BUILD_DATE)-$(SM_BUILDTYPE)-$(SM_BUILD)
     else
-        SM_VERSION := SM$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(SM_BUILD)-$(shell date +%y%m%d)-$(SM_BUILDTYPE)
+        SM_VERSION := $(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(shell date +%y%m%d)-$(SM_BUILDTYPE)-$(SM_BUILD)
     endif
 else
-    SM_VERSION := SM$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(SM_BUILD)-$(shell date +%Y%m%d%H%M)-$(SM_BUILDTYPE)
+    SM_VERSION := $(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(shell date +%Y%m%d%H%M)-$(SM_BUILDTYPE)-$(SM_BUILD)
 endif
 
 PRODUCT_PROPERTY_OVERRIDES += \
