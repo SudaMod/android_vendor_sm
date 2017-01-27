@@ -163,8 +163,6 @@ PRODUCT_PACKAGES += \
     WallpaperPicker \
     WeatherProvider
 
-
-
 # Exchange support
 PRODUCT_PACKAGES += \
     Exchange2
@@ -286,7 +284,11 @@ ifneq ($(filter RELEASE,$(SM_BUILDTYPE)),)
         SM_VERSION := $(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(shell date +%y%m%d)-$(SM_BUILDTYPE)-$(SM_BUILD)
     endif
 else
-    SM_VERSION := $(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(shell date +%Y%m%d%H%M)-$(SM_BUILDTYPE)-$(SM_BUILD)
+    ifdef SM_BUILD_DATE
+        SM_VERSION := $(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(SM_BUILD_DATE)-$(SM_BUILDTYPE)-$(SM_BUILD)
+    else
+        SM_VERSION := $(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)-$(shell date +%Y%m%d%H%M)-$(SM_BUILDTYPE)-$(SM_BUILD)
+    endif
 endif
 
 PRODUCT_PROPERTY_OVERRIDES += \

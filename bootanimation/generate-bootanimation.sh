@@ -18,6 +18,13 @@ if [ "$HALF_RES" = "true" ]; then
     IMAGEWIDTH=$(expr $IMAGEWIDTH / 2)
 fi
 
+
+
+if  [ "$WIDTH" = "1080" ]; then
+cp "vendor/sm/bootanimation/1080.zip" "$OUT/bootanimation.zip"
+elif  [ "$WIDTH" = "720" ]; then
+cp "vendor/sm/bootanimation/720.zip" "$OUT/bootanimation.zip"
+else
 IMAGEHEIGHT=$(expr $IMAGEWIDTH / 3)
 
 RESOLUTION=""$IMAGEWIDTH"x"$IMAGEHEIGHT""
@@ -36,3 +43,4 @@ cat "vendor/sm/bootanimation/desc.txt" >> "$OUT/bootanimation/desc.txt"
 cd "$OUT/bootanimation"
 
 zip -qr0 "$OUT/bootanimation.zip" .
+fi
