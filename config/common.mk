@@ -89,10 +89,6 @@ PRODUCT_COPY_FILES += $(shell test -d vendor/sm/prebuilt/google/app/GooglePinYin
 PRODUCT_COPY_FILES += \
     vendor/sm/prebuilt/Brevent/Brevent.apk:system/app/Brevent/Brevent.apk
 
-#SudaModUpdater
-PRODUCT_COPY_FILES += \
-    vendor/sm/prebuilt/SudaModUpdater/SudaModUpdater.apk:system/priv-app/SudaModUpdater/SudaModUpdater.apk
-
 # Copy over added mimetype supported in libcore.net.MimeUtils
 PRODUCT_COPY_FILES += \
     vendor/sm/prebuilt/common/lib/content-types.properties:system/lib/content-types.properties
@@ -150,6 +146,7 @@ PRODUCT_PACKAGES += \
 # Custom CM packages
 PRODUCT_PACKAGES += \
     CMFileManager \
+    CMUpdater \
     SMSetupWizard \
     Eleven \
     PhoneLocationProvider \
