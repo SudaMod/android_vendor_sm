@@ -267,8 +267,6 @@ PRODUCT_PACKAGES += \
 ifeq ($(WITH_SU),true)
 PRODUCT_PACKAGES += \
     su
-endif
-endif
 
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.root_access=1
@@ -278,6 +276,7 @@ DEVICE_PACKAGE_OVERLAYS += vendor/sm/overlay/common
 else
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.root_access=0
+endif
 endif
 
 # Chromium Prebuilt
