@@ -151,7 +151,6 @@ PRODUCT_PACKAGES += \
     SMSetupWizard \
     Eleven \
     PhoneLocationProvider \
-
     ExactCalculator \
     LiveLockScreenService \
     LockClock \
