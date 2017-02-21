@@ -146,11 +146,12 @@ PRODUCT_PACKAGES += \
 # Custom CM packages
 PRODUCT_PACKAGES += \
     CMFileManager \
+    CMSettingsProvider \
     CMUpdater \
     SMSetupWizard \
     Eleven \
     PhoneLocationProvider \
-    CMSettingsProvider \
+
     ExactCalculator \
     LiveLockScreenService \
     LockClock \
