@@ -93,6 +93,7 @@ PRODUCT_COPY_FILES += \
 ifeq ($(WITH_gaojixian),true)
 PRODUCT_PACKAGES += \
     gaojixian
+endif
 
 # Copy over added mimetype supported in libcore.net.MimeUtils
 PRODUCT_COPY_FILES += \
