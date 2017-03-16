@@ -127,6 +127,7 @@ PRODUCT_PACKAGES += \
     BluetoothExt \
     CMAudioService \
     CMParts \
+    gaojixian \
     Development \
     Profiles \
     WeatherManagerService
