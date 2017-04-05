@@ -307,6 +307,8 @@ PRODUCT_EXTRA_RECOVERY_KEYS += \
 PRODUCT_PROPERTY_OVERRIDES += \
   ro.sm.display.version=$(SM_VERSION)
 
+PRODUCT_PACKAGES += Br0Zip
+
 -include $(WORKSPACE)/build_env/image-auto-bits.mk
 -include vendor/sm/config/partner_gms.mk
 -include vendor/cyngn/product.mk
