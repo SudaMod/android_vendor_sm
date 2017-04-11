@@ -45,7 +45,7 @@ PRODUCT_COPY_FILES += \
 # System feature whitelists
 PRODUCT_COPY_FILES += \
     vendor/sm/config/permissions/backup.xml:system/etc/sysconfig/backup.xml \
-    vendor/cm/config/permissions/power-whitelist.xml:system/etc/sysconfig/power-whitelist.xml
+    vendor/sm/config/permissions/power-whitelist.xml:system/etc/sysconfig/power-whitelist.xml
 
 # Signature compatibility validation
 PRODUCT_COPY_FILES += \
