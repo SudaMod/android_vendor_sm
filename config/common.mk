@@ -42,9 +42,10 @@ PRODUCT_COPY_FILES += \
     vendor/sm/prebuilt/common/bin/50-sm.sh:system/addon.d/50-sm.sh \
     vendor/sm/prebuilt/common/bin/blacklist:system/addon.d/blacklist
 
-# Backup Services whitelist
+# System feature whitelists
 PRODUCT_COPY_FILES += \
-    vendor/sm/config/permissions/backup.xml:system/etc/sysconfig/backup.xml
+    vendor/sm/config/permissions/backup.xml:system/etc/sysconfig/backup.xml \
+    vendor/cm/config/permissions/power-whitelist.xml:system/etc/sysconfig/power-whitelist.xml
 
 # Signature compatibility validation
 PRODUCT_COPY_FILES += \
@@ -306,8 +307,6 @@ PRODUCT_EXTRA_RECOVERY_KEYS += \
 
 PRODUCT_PROPERTY_OVERRIDES += \
   ro.sm.display.version=$(SM_VERSION)
-
-PRODUCT_PACKAGES += Br0Zip
 
 -include $(WORKSPACE)/build_env/image-auto-bits.mk
 -include vendor/sm/config/partner_gms.mk
