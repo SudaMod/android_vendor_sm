@@ -155,7 +155,6 @@ PRODUCT_PACKAGES += \
     CMFileManager \
     CMSettingsProvider \
     CMUpdater \
-    CustomTiles \
     SMSetupWizard \
     Eleven \
     PhoneLocationProvider \
