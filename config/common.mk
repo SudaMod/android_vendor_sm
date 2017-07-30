@@ -125,6 +125,11 @@ include vendor/sm/config/themes_common.mk
 # CMSDK
 include vendor/sm/config/cmsdk_common.mk
 
+# TWRP
+ifeq ($(WITH_TWRP),true)
+include vendor/cm/config/twrp.mk
+endif
+
 # Bootanimation
 PRODUCT_PACKAGES += \
     bootanimation.zip
