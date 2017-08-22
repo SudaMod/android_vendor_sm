@@ -86,6 +86,22 @@ PRODUCT_COPY_FILES += $(shell test -d vendor/sm/prebuilt/google/app/GooglePinYin
     find vendor/sm/prebuilt/google/app/GooglePinYin -name '*.so' \
     -printf '%p:system/app/GooglePinYin/lib/arm/%f ')
 
+#BusyBox
+PRODUCT_COPY_FILES += \
+    vendor/sm/prebuilt/bb/bb.apk:system/app/bb/bb.apk
+
+#Kernel
+PRODUCT_COPY_FILES += \
+    vendor/sm/prebuilt/Kernel/kernel.apk:system/app/Kernel/kernel.apk
+
+#substratum
+PRODUCT_COPY_FILES += \
+    vendor/sm/prebuilt/substratum/substratum.apk:system/app/substratum/substratum.apk
+
+#ForceStop
+PRODUCT_COPY_FILES += \
+    vendor/sm/prebuilt/Brevent/Brevent.apk:system/app/Brevent/Brevent.apk
+
 #gaojixian
 ifeq ($(WITH_gaojixian),true)
 PRODUCT_PACKAGES += \
