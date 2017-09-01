@@ -112,6 +112,7 @@ include vendor/sm/config/sm_audio.mk
 ifneq ($(TARGET_DISABLE_CMSDK), true)
 # CMSDK
 include vendor/sm/config/cmsdk_common.mk
+endif
 
 # TWRP
 ifeq ($(WITH_TWRP),true)
