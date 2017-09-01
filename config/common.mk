@@ -109,9 +109,7 @@ PRODUCT_COPY_FILES +=  \
 # Include SM audio files
 include vendor/sm/config/sm_audio.mk
 
-# Theme engine
-include vendor/sm/config/themes_common.mk
-
+ifneq ($(TARGET_DISABLE_CMSDK), true)
 # CMSDK
 include vendor/sm/config/cmsdk_common.mk
 
@@ -155,7 +153,6 @@ PRODUCT_PACKAGES += \
     PhoneLocationProvider \
     ExactCalculator \
     Jelly \
-    LiveLockScreenService \
     LockClock \
     Trebuchet \
     WallpaperPicker \
@@ -293,6 +290,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.sm.version=$(SM_VERSION) \
     ro.sm.releasetype=$(SM_BUILDTYPE) \
     ro.modversion=$(SM_VERSION) \
+    ro.sm.build.version=$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)
     ro.cmlegal.url=https://lineageos.org/legal
 
 PRODUCT_EXTRA_RECOVERY_KEYS += \
