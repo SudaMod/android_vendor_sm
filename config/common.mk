@@ -28,12 +28,20 @@ endif
 
 ifneq ($(TARGET_BUILD_VARIANT),eng)
 # Enable ADB authentication
-ADDITIONAL_DEFAULT_PROPERTIES += ro.adb.secure=1
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.adb.secure=1
 endif
 
 # Copy over the changelog to the device
 PRODUCT_COPY_FILES += \
     vendor/sm/CHANGELOG.mkdn:system/etc/CHANGELOG-CM.txt
+
+ifeq ($(BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE),)
+  PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    ro.device.cache_dir=/data/cache
+else
+  PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    ro.device.cache_dir=/cache
+endif
 
 # Backup Tool
 PRODUCT_COPY_FILES += \
@@ -46,6 +54,14 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/sm/config/permissions/backup.xml:system/etc/sysconfig/backup.xml \
     vendor/sm/config/permissions/power-whitelist.xml:system/etc/sysconfig/power-whitelist.xml
+
+# Signature compatibility validation
+PRODUCT_COPY_FILES += \
+    vendor/sm/prebuilt/common/bin/otasigcheck.sh:install/bin/otasigcheck.sh
+
+# Backup Services whitelist
+PRODUCT_COPY_FILES += \
+    vendor/sm/config/permissions/backup.xml:system/etc/sysconfig/backup.xml
 
 # Signature compatibility validation
 PRODUCT_COPY_FILES += \
@@ -117,14 +133,14 @@ include vendor/sm/config/cmsdk_common.mk
 
 # TWRP
 ifeq ($(WITH_TWRP),true)
-include vendor/cm/config/twrp.mk
+include vendor/sm/config/twrp.mk
 endif
 
 # Bootanimation
 PRODUCT_PACKAGES += \
     bootanimation.zip
 
-# Required CM packages
+# Required SudaMod packages
 PRODUCT_PACKAGES += \
     BluetoothExt \
     CMAudioService \
@@ -155,7 +171,6 @@ PRODUCT_PACKAGES += \
     PhoneLocationProvider \
     ExactCalculator \
     Jelly \
-    LiveLockScreenService \
     LockClock \
     Trebuchet \
     WallpaperPicker \
@@ -193,12 +208,12 @@ PRODUCT_PACKAGES += \
     zip
 
 # Custom off-mode charger
-ifneq ($(WITH_CM_CHARGER),false)
+ifneq ($(WITH_LINEAGE_CHARGER),false)
 PRODUCT_PACKAGES += \
     charger_res_images \
-    cm_charger_res_images \
+    lineage_charger_res_images \
     font_log.png \
-    libhealthd.cm
+    libhealthd.lineage
 endif
 
 # ExFAT support
@@ -238,13 +253,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Storage manager
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.storage_manager.enabled=true
-
-# Telephony
-PRODUCT_PACKAGES += \
-    telephony-ext
-
-PRODUCT_BOOT_JARS += \
-    telephony-ext
 
 # These packages are excluded from user builds
 ifneq ($(TARGET_BUILD_VARIANT),user)
@@ -298,7 +306,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_EXTRA_RECOVERY_KEYS += \
     vendor/sm/build/target/product/security/lineage
 
--include vendor/cm-priv/keys/keys.mk
+-include vendor/lineage-priv/keys/keys.mk
 
 PRODUCT_PROPERTY_OVERRIDES += \
   ro.sm.display.version=$(SM_VERSION)
