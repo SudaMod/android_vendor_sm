@@ -26,8 +26,7 @@ COMMON=-1
 ARCHES=
 FULLY_DEODEXED=-1
 
-TMPDIR="/tmp/extractfiles.$$"
-mkdir "$TMPDIR"
+TMPDIR=$(mktemp -d)
 
 #
 # cleanup
@@ -38,7 +37,7 @@ function cleanup() {
     rm -rf "${TMPDIR:?}"
 }
 
-trap cleanup EXIT INT TERM ERR
+trap cleanup 0
 
 #
 # setup_vendor
@@ -700,7 +699,12 @@ function oat2dex() {
         echo "Checking if system is odexed and locating boot.oats..."
         for ARCH in "arm64" "arm" "x86_64" "x86"; do
             mkdir -p "$TMPDIR/system/framework/$ARCH"
-            if get_file "system/framework/$ARCH/" "$TMPDIR/system/framework/" "$SRC"; then
+            if [ -d "$SRC/framework" ] && [ "$SRC" != "adb" ]; then
+                ARCHDIR="framework/$ARCH/"
+            else
+                ARCHDIR="system/framework/$ARCH/"
+            fi
+            if get_file "$ARCHDIR" "$TMPDIR/system/framework/" "$SRC"; then
                 ARCHES+="$ARCH "
             else
                 rmdir "$TMPDIR/system/framework/$ARCH"
