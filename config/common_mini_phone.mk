@@ -1,6 +1,7 @@
+# Inherit mini common SudaMod stuff
 $(call inherit-product, vendor/sm/config/common_mini.mk)
 
-# Required SM packages
+# Required packages
 PRODUCT_PACKAGES += \
     LatinIME
 

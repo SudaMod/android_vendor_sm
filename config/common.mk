@@ -31,10 +31,6 @@ ifneq ($(TARGET_BUILD_VARIANT),eng)
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.adb.secure=1
 endif
 
-# Copy over the changelog to the device
-PRODUCT_COPY_FILES += \
-    vendor/sm/CHANGELOG.mkdn:system/etc/CHANGELOG-CM.txt
-
 ifeq ($(BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE),)
   PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     ro.device.cache_dir=/data/cache
@@ -54,6 +50,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/sm/config/permissions/backup.xml:system/etc/sysconfig/backup.xml
 
+# Lineage-specific broadcast actions whitelist
+PRODUCT_COPY_FILES += \
+    vendor/lineage/config/permissions/lineage-sysconfig.xml:system/etc/sysconfig/lineage-sysconfig.xml
+
 # Signature compatibility validation
 PRODUCT_COPY_FILES += \
     vendor/sm/prebuilt/common/bin/otasigcheck.sh:install/bin/otasigcheck.sh
@@ -68,10 +68,6 @@ ifneq ($(TARGET_BUILD_VARIANT),user)
 PRODUCT_COPY_FILES += \
     vendor/sm/prebuilt/common/etc/init.d/90userinit:system/etc/init.d/90userinit
 endif
-
-# SM-specific init file
-PRODUCT_COPY_FILES += \
-    vendor/sm/prebuilt/common/etc/init.local.rc:root/init.sm.rc
 
 # USE V4A
 ifeq ($(WITH_V4A),true)
@@ -93,6 +89,10 @@ PRODUCT_COPY_FILES += $(shell test -d vendor/sm/prebuilt/google/app/GooglePinYin
     find vendor/sm/prebuilt/google/app/GooglePinYin -name '*.so' \
     -printf '%p:system/app/GooglePinYin/lib/arm/%f ')
 
+# Copy all SudaMod-specific init rc files
+$(foreach f,$(wildcard vendor/sm/prebuilt/common/etc/init/*.rc),\
+	$(eval PRODUCT_COPY_FILES += $(f):system/etc/init/$(notdir $f)))
+
 # Copy over added mimetype supported in libcore.net.MimeUtils
 PRODUCT_COPY_FILES += \
     vendor/sm/prebuilt/common/lib/content-types.properties:system/lib/content-types.properties
@@ -107,7 +107,7 @@ PRODUCT_COPY_FILES += \
 
 # This is SM!
 PRODUCT_COPY_FILES += \
-    vendor/sm/config/permissions/com.cyanogenmod.android.xml:system/etc/permissions/com.cyanogenmod.android.xml \
+    vendor/sm/config/permissions/org.lineageos.android.xml:system/etc/permissions/org.lineageos.android.xml
 
 # Phonelocation!
 PRODUCT_COPY_FILES +=  \
@@ -119,8 +119,10 @@ include vendor/sm/config/sm_audio.mk
 # Theme engine
 include vendor/sm/config/themes_common.mk
 
-# CMSDK
-include vendor/sm/config/cmsdk_common.mk
+ifneq ($(TARGET_DISABLE_LINEAGE_SDK), true)
+# Lineage SDK
+include vendor/sm/config/lineage_sdk_common.mk
+endif
 
 # TWRP
 ifeq ($(WITH_TWRP),true)
@@ -135,7 +137,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     BluetoothExt \
     CMAudioService \
-    CMParts \
+    LineageParts \
     Development \
     Profiles \
     WeatherManagerService
@@ -155,15 +157,16 @@ PRODUCT_PACKAGES += \
 # Custom CM packages
 PRODUCT_PACKAGES += \
     CMFileManager \
-    CMSettingsProvider \
-    CMUpdater \
-    SMSetupWizard \
+    AudioFX \
+    LineageSettingsProvider \
+    LineageSetupWizard \
     Eleven \
     PhoneLocationProvider \
     ExactCalculator \
     Jelly \
     LockClock \
     Trebuchet \
+    Updater \
     WallpaperPicker \
     WeatherProvider
 
@@ -292,7 +295,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.sm.version=$(SM_VERSION) \
     ro.sm.releasetype=$(SM_BUILDTYPE) \
     ro.modversion=$(SM_VERSION) \
-    ro.cmlegal.url=https://lineageos.org/legal
+    ro.lineagelegal.url=https://lineageos.org/legal
 
 PRODUCT_EXTRA_RECOVERY_KEYS += \
     vendor/sm/build/target/product/security/lineage
