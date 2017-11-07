@@ -157,7 +157,6 @@ PRODUCT_PACKAGES += \
 # Custom CM packages
 PRODUCT_PACKAGES += \
     CMFileManager \
-    AudioFX \
     LineageSettingsProvider \
     LineageSetupWizard \
     Eleven \
