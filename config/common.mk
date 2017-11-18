@@ -112,7 +112,7 @@ endif
 
 # TWRP
 ifeq ($(WITH_TWRP),true)
-include vendor/cm/config/twrp.mk
+include vendor/sm/config/twrp.mk
 endif
 
 # Bootanimation
