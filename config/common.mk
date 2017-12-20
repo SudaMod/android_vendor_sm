@@ -107,7 +107,8 @@ PRODUCT_COPY_FILES += \
 
 # This is SM!
 PRODUCT_COPY_FILES += \
-    vendor/sm/config/permissions/org.lineageos.android.xml:system/etc/permissions/org.lineageos.android.xml
+    vendor/sm/config/permissions/org.lineageos.android.xml:system/etc/permissions/org.lineageos.android.xml \
+    vendor/sm/config/permissions/privapp-permissions-lineage.xml:system/etc/permissions/privapp-permissions-lineage.xml
 
 # Phonelocation!
 PRODUCT_COPY_FILES +=  \
@@ -115,9 +116,6 @@ PRODUCT_COPY_FILES +=  \
 
 # Include SM audio files
 include vendor/sm/config/sm_audio.mk
-
-# Theme engine
-include vendor/sm/config/themes_common.mk
 
 ifneq ($(TARGET_DISABLE_LINEAGE_SDK), true)
 # Lineage SDK
