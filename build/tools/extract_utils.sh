@@ -744,8 +744,8 @@ function oat2dex() {
     local OAT=
 
     if [ -z "$BAKSMALIJAR" ] || [ -z "$SMALIJAR" ]; then
-        export BAKSMALIJAR="$LINEAGE_ROOT"/vendor/lineage/build/tools/smali/baksmali.jar
-        export SMALIJAR="$LINEAGE_ROOT"/vendor/lineage/build/tools/smali/smali.jar
+        export BAKSMALIJAR="$LINEAGE_ROOT"/vendor/sm/build/tools/smali/baksmali.jar
+        export SMALIJAR="$LINEAGE_ROOT"/vendor/sm/build/tools/smali/smali.jar
     fi
 
     # Extract existing boot.oats to the temp folder
@@ -770,11 +770,11 @@ function oat2dex() {
         FULLY_DEODEXED=1 && return 0 # system is fully deodexed, return
     fi
 
-    if [ ! -f "$LINEAGE_TARGET" ]; then
+    if [ ! -f "$SM_TARGET" ]; then
         return;
     fi
 
-    if grep "classes.dex" "$LINEAGE_TARGET" >/dev/null; then
+    if grep "classes.dex" "$SM_TARGET" >/dev/null; then
         return 0 # target apk|jar is already odexed, return
     fi
 
@@ -789,7 +789,7 @@ function oat2dex() {
                 echo "WARNING: Deodexing with VDEX. Still experimental"
             fi
             java -jar "$BAKSMALIJAR" deodex -o "$TMPDIR/dexout" -b "$BOOTOAT" -d "$TMPDIR" "$TMPDIR/$(basename "$OAT")"
-        elif [[ "$LINEAGE_TARGET" =~ .jar$ ]]; then
+        elif [[ "$SM_TARGET" =~ .jar$ ]]; then
             # try to extract classes.dex from boot.oats for framework jars
             # TODO: check if extraction from boot.vdex is needed
             JAROAT="$TMPDIR/system/framework/$ARCH/boot-$(basename ${OEM_TARGET%.*}).oat"
@@ -906,7 +906,7 @@ function extract() {
             # If OTA is block based, extract it.
             elif [ -a "$DUMPDIR"/system.new.dat ]; then
                 echo "Converting system.new.dat to system.img"
-                python "$LINEAGE_ROOT"/vendor/lineage/build/tools/sdat2img.py "$DUMPDIR"/system.transfer.list "$DUMPDIR"/system.new.dat "$DUMPDIR"/system.img 2>&1
+                python "$LINEAGE_ROOT"/vendor/sm/build/tools/sdat2img.py "$DUMPDIR"/system.transfer.list "$DUMPDIR"/system.new.dat "$DUMPDIR"/system.img 2>&1
                 rm -rf "$DUMPDIR"/system.new.dat "$DUMPDIR"/system
                 mkdir "$DUMPDIR"/system "$DUMPDIR"/tmp
                 echo "Requesting sudo access to mount the system.img"
