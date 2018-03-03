@@ -34,11 +34,7 @@ check_prereq() {
 if [ ! -r /system/build.prop ]; then
     return 0
 fi
-<<<<<<< HEAD
-if ( ! grep -q "^ro.sm.version=$V.*" /system/build.prop ); then
-=======
-if [ ! grep -q "^ro.lineage.version=$V.*" /system/etc/prop.default /system/build.prop ]; then
->>>>>>> 1022cc7c50b551f01e33256439980353d9d58c8e
+if [ ! grep -q "^ro.sm.version=$V.*" /system/etc/prop.default /system/build.prop ]; then
   echo "Not backing up files from incompatible version: $V"
   return 0
 fi
