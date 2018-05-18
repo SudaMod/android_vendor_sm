@@ -83,7 +83,7 @@
   <apn carrier="MVNO NL" mcc="204" mnc="08" apn="internet.mvno.mobi" user="mvno" password="mvno" authtype="1" type="default,supl" mvno_match_data="204080950" mvno_type="imsi" />
   <apn carrier="Telfort Internet" mcc="204" mnc="08" apn="internet" mmsc="http://mms" mmsproxy="" mmsport="8080" type="default,supl,mms" />
   <apn carrier="Lycamobile NL" mcc="204" mnc="09" apn="data.lycamobile.nl" user="lmnl" password="plus" type="default,supl" />
-  <apn carrier="Telfort Mobiel Internet" mcc="204" mnc="12" apn="internet" proxy="193.113.200.195" port="8080" user="" password="" mmsc="http://mms" mmsproxy="193.113.200.195" mmsport="8080" spn="Telfort" authtype="1" type="default,supl,mms" />
+  <apn carrier="Telfort Internet" mcc="204" mnc="12" apn="internet" proxy="" port="" user="" password="" mmsc="http://mms" mmsproxy="193.113.200.195" mmsport="8080" spn="Telfort" authtype="1" type="default,supl,mms" />
   <apn carrier="AH Mobiel Internet" mcc="204" mnc="12" apn="multimedia.ah.nl" proxy="" port="" user="" password="" mmsc="http://mms" mmsproxy="193.113.200.195" mmsport="8080" type="default,supl,mms" spn="AH Mobiel" />
   <apn carrier="T-Mobile Internet" mcc="204" mnc="16" apn="internet" proxy="" port="" user="" password="" mmsc="" authtype="1" type="default,supl" />
   <apn carrier="T-Mobile NL" mcc="204" mnc="16" apn="smartsites.t-mobile" proxy="" port="" user="" password="" mmsc="" type="default,supl" />
@@ -525,6 +525,7 @@
   <apn carrier="Orange MMS" mcc="232" mnc="12" apn="orange.mms" proxy="" port="" mmsproxy="194.24.128.118" mmsport="8080" mmsc="http://mmsc.orange.at/mms/wapenc" user="mms" password="mms" authtype="3" type="mms" />
   <apn carrier="Orange Video" mcc="232" mnc="12" apn="orange.video" user="video" password="" authtype="3" type="default,supl" />
   <apn carrier="Yesss" mcc="232" mnc="12" apn="webapn.at" type="default,supl" />
+  <apn carrier="spusu" mcc="232" mnc="17" apn="mass.at" type="default,supl" />
   <apn carrier="UBIQUISYS" mcc="234" mnc="01" apn="internet" proxy="" port="" user="" password="" mmsc="" mvno_type="spn" mvno_match_data="Vectone Mobile" type="default,supl,mms" />
   <apn carrier="Tesco Prepay" mcc="234" mnc="01" apn="prepay.tesco-mobile.com" user="tescowap" password="password" server="http://wap.tesco-mobile.com/" proxy="193.113.200.195" port="9201" type="default,supl,mms" />
   <apn carrier="Vectone Mobile" mcc="234" mnc="01" apn="webuk.mundio.com" type="default,supl" />
@@ -1381,8 +1382,7 @@
   <apn carrier="WCW Internet" mcc="310" mnc="180" apn="internet.wcc.net" user="3257630000" password="mmsc" type="default,supl" authtype="0" />
   <apn carrier="WCW-MMS" mcc="310" mnc="180" apn="mms.wcc.net" proxy="209.55.70.246" port="80" mmsc="http://mms.wcc.net" mmsproxy="209.55.70.246" mmsport="80" user="13257630000" password="mmsc" type="mms" authtype="3" />
   <apn carrier="WCW-MMS only" mcc="310" mnc="180" apn="mms.wcc.net" proxy="209.55.70.244" port="80" mmsc="http://mms.wcc.net" mmsproxy="209.55.70.246" mmsport="80" user="3257630000" password="mmsc" type="default,mms" authtype="3" />
-  <apn carrier="T-Mobile US LTE" mcc="310" mnc="260" apn="fast.t-mobile.com" type="default,supl,ia" protocol="IPV4V6" roaming_protocol="IP" mtu="1440" />
-  <apn carrier="T-Mobile MMS" mcc="310" mnc="260" apn="TMUS" mmsc="http://mms.msg.eng.t-mobile.com/mms/wapenc" type="mms" protocol="IPV4V6" roaming_protocol="IP" />
+  <apn carrier="T-Mobile US LTE" mcc="310" mnc="260" apn="fast.t-mobile.com" mmsc="http://mms.msg.eng.t-mobile.com/mms/wapenc" type="default,supl,mms,ia" protocol="IPV4V6" roaming_protocol="IPV4V6" mtu="1440" />
   <apn carrier="Project Fi - T" mcc="310" mnc="260" apn="h2g2" type="ia" protocol="IPV4V6" roaming_protocol="IPV4V6" mvno_match_data="31026097" mvno_type="IMSI" />
   <apn carrier="Project Fi - T" mcc="310" mnc="260" apn="h2g2" user="none" server="*" password="none" mmsc="http://mmsc1.g-mms.com/mms/wapenc" protocol="IPV6" roaming_protocol="IP" mvno_match_data="31026097" mvno_type="IMSI" />
   <apn carrier="T-Mobile IMS" mcc="310" mnc="260" apn="ims" type="ims" modem_cognitive="true" protocol="IPV6" />
