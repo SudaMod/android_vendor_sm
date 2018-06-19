@@ -140,6 +140,7 @@ PRODUCT_PACKAGES += \
     PhoneLocationProvider \
     ExactCalculator \
     Jelly \
+    ForceStop \
     LockClock \
     Trebuchet \
     WallpaperPicker \
