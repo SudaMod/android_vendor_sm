@@ -3,7 +3,8 @@
 WIDTH="$1"
 HEIGHT="$2"
 HALF_RES="$3"
-OUT="$ANDROID_PRODUCT_OUT/obj/BOOTANIMATION"
+WORKING_DIR="$4"
+OUT="$WORKING_DIR/obj/BOOTANIMATION"
 
 if [ "$HEIGHT" -lt "$WIDTH" ]; then
     IMAGEWIDTH="$HEIGHT"
@@ -13,6 +14,10 @@ fi
 
 IMAGESCALEWIDTH="$IMAGEWIDTH"
 IMAGESCALEHEIGHT=$(expr $IMAGESCALEWIDTH / 3)
+
+if [ ! -d "$OUT" ]; then
+    mkdir $OUT
+fi
 
 if  [ "$WIDTH" = "1080" ]; then
 cp "vendor/sm/bootanimation/1080.zip" "$OUT/bootanimation.zip"
