@@ -15,6 +15,10 @@ fi
 IMAGESCALEWIDTH="$IMAGEWIDTH"
 IMAGESCALEHEIGHT=$(expr $IMAGESCALEWIDTH / 3)
 
+if [ ! -d "$OUT" ]; then
+    mkdir $OUT
+fi
+
 if  [ "$WIDTH" = "1080" ]; then
 cp "vendor/sm/bootanimation/1080.zip" "$OUT/bootanimation.zip"
 elif  [ "$WIDTH" = "720" ]; then
