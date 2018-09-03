@@ -61,10 +61,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/sm/config/permissions/lineage-sysconfig.xml:system/etc/sysconfig/lineage-sysconfig.xml
 
-# Signature compatibility validation
-PRODUCT_COPY_FILES += \
-    vendor/sm/prebuilt/common/bin/otasigcheck.sh:install/bin/otasigcheck.sh
-
 # init.d support
 PRODUCT_COPY_FILES += \
     vendor/sm/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner \
@@ -120,7 +116,6 @@ PRODUCT_PACKAGES += \
 
 # Required Lineage packages
 PRODUCT_PACKAGES += \
-    BluetoothExt \
     LineageParts \
     Development \
     Profiles
@@ -179,21 +174,11 @@ PRODUCT_PACKAGES += \
     bash \
     bzip2 \
     curl \
-    fsck.ntfs \
-    gdbserver \
     htop \
     lib7z \
     libsepol \
-    micro_bench \
-    mke2fs \
-    mkfs.ntfs \
-    mount.ntfs \
-    oprofiled \
     pigz \
     powertop \
-    sqlite3 \
-    strace \
-    tune2fs \
     unrar \
     unzip \
     vim \
@@ -212,10 +197,14 @@ PRODUCT_PACKAGES += \
     libhealthd.lineage
 endif
 
-# exFAT tools
+# Filesystems tools
 PRODUCT_PACKAGES += \
     fsck.exfat \
-    mkfs.exfat
+    fsck.ntfs \
+    mke2fs \
+    mkfs.exfat \
+    mkfs.ntfs \
+    mount.ntfs
 
 # Openssh
 PRODUCT_PACKAGES += \
@@ -240,10 +229,19 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     media.recorder.show_manufacturer_and_model=true
 
 # These packages are excluded from user builds
-ifneq ($(TARGET_BUILD_VARIANT),user)
-PRODUCT_PACKAGES += \
+PRODUCT_PACKAGES_DEBUG += \
+    micro_bench \
     procmem \
     procrank \
+<<<<<<< HEAD
+=======
+    strace
+
+# Conditionally build in su
+ifneq ($(TARGET_BUILD_VARIANT),user)
+ifeq ($(WITH_SU),true)
+PRODUCT_PACKAGES += \
+>>>>>>> 6f5036f933d75589664a6ac019de174c7ac318a7
     su
 endif
 
