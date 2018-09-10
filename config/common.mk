@@ -233,16 +233,14 @@ PRODUCT_PACKAGES_DEBUG += \
     micro_bench \
     procmem \
     procrank \
-<<<<<<< HEAD
-=======
     strace
 
 # Conditionally build in su
 ifneq ($(TARGET_BUILD_VARIANT),user)
 ifeq ($(WITH_SU),true)
 PRODUCT_PACKAGES += \
->>>>>>> 6f5036f933d75589664a6ac019de174c7ac318a7
     su
+endif
 endif
 
 DEVICE_PACKAGE_OVERLAYS += vendor/sm/overlay/common
